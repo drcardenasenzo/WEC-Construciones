@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEC Construcciones: Pozos Ciegos, Hornos de Barro y Muros en CABA y GBA</title>
+    <meta name="description" content="WEC Construcciones es líder en la construcción de pozos ciegos, hornos de barro y muros de alta calidad en CABA y Gran Buenos Aires. Diseñamos y construimos tus proyectos con experiencia y garantía. ¡Cotiza online!">
+    <meta name="keywords" content="construcción, pozos ciegos, hornos de barro, muros, WEC Construcciones, construcción en CABA, construcción en Gran Buenos Aires, cotizar construcción, obras de hormigón">
+
+    <link rel="canonical" href="https://www.wecconstrucciones.com.ar/">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.wecconstrucciones.com.ar/">
+    <meta property="og:title" content="WEC Construcciones: Pozos Ciegos, Hornos de Barro y Muros en CABA y GBA">
+    <meta property="og:description" content="WEC Construcciones es líder en la construcción de pozos ciegos, hornos de barro y muros de alta calidad en CABA y Gran Buenos Aires. Diseñamos y construimos tus proyectos con experiencia y garantía. ¡Cotiza online!">
+    <meta property="og:image" content="https://www.wecconstrucciones.com.ar/logo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.wecconstrucciones.com.ar/">
+    <meta property="twitter:title" content="WEC Construcciones: Pozos Ciegos, Hornos de Barro y Muros en CABA y GBA">
+    <meta property="twitter:description" content="WEC Construcciones es líder en la construcción de pozos ciegos, hornos de barro y muros de alta calidad en CABA y Gran Buenos Aires. Diseñamos y construimos tus proyectos con experiencia y garantía. ¡Cotiza online!">
+    <meta property="twitter:image" content="https://www.wecconstrucciones.com.ar/logo.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos base para el cuerpo y los encabezados */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--announcement-bar-height, 24px) + var(--header-height-desktop, 80px) + 0px);
+        }
+        @media (max-width: 767px) {
+            html {
+                scroll-padding-top: calc(var(--announcement-bar-height, 18px) + var(--header-height-mobile, 70px) + 0px) !important;
+            }
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4A4A4A;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .text-shadow-custom {
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Colores personalizados de la marca (basados en el logo naranja) */
+        .bg-wec-principal { background-color: #FF6600; } /* Naranja principal del logo */
+        .text-wec-principal { color: #FF6600; }
+        .border-wec-principal { border-color: #FF6600; }
+        .bg-wec-secundario { background-color: #FFA500; } /* Naranja más claro */
+        .bg-wec-profundo { background-color: #CC5200; } /* Naranja más oscuro */
+        .text-wec-profundo { color: #CC5200; }
+
+        /* Estilos de botones */
+        .btn-primary {
+            @apply bg-[#FF6600] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out;
+        }
+        .btn-secondary {
+            @apply bg-[#CC5200] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out text-sm;
+        }
+
+        /* Títulos y subtítulos de sección */
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center mb-4 text-[#CC5200];
+        }
+        .section-subtitle {
+            @apply text-lg text-center text-gray-600 mb-12;
+        }
+
+        /* Efecto hover de tarjeta */
+        .card-hover-effect {
+            @apply transition-all duration-300 ease-in-out relative z-10;
+        }
+        .card-hover-effect:hover {
+            box-shadow: 0 10px 15px -3px rgba(255, 102, 0, 0.5) !important; /* Sombra naranja */
+            transform: translateY(-0.25rem) !important;
+        }
+
+        /* Estilos de Swiper Hero (carrusel principal) - Escritorio por defecto */
+        .swiper-container-hero {
+            width: 100%;
+            height: 100vh; /* Ajustado a 100vh para escritorio */
+            overflow: hidden;
+        }
+        .swiper-container-hero .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100%; /* Cambiado a 100% para llenar la altura del padre */
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #FF6600 !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #FFFFFF !important;
+            background-color: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 50%;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 24px !important;
+        }
+        .swiper-container-hero .swiper-pagination {
+            display: none !important;
+        }
+
+        /* Estilos de Swiper Project (carruseles modales) */
+        .swiper-container-project {
+            width: 100%;
+            height: auto; /* Cambiado a auto para adaptarse al contenido */
+            max-height: 500px; /* Altura máxima para escritorio */
+            aspect-ratio: 16 / 9; /* Mantener relación de aspecto */
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            position: relative;
+            background-color: #f0f0f0;
+        }
+        .swiper-container-project .swiper-slide {
+            width: 100%; height: 100%; display: flex;
+            justify-content: center; align-items: center;
+        }
+        .swiper-container-project img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .custom-swiper-button {
+            position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; cursor: pointer;
+            width: 28px; height: 28px; background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0px 1px rgba(0,0,0,0.03); transition: all 0.3s ease-in-out;
+        }
+        .custom-swiper-button:hover { background-color: rgba(255, 255, 255, 0.3); transform: translateY(-50%) scale(1.05); }
+        .custom-swiper-button svg { width: 16px; height: 16px; color: #CC5200; }
+        .custom-swiper-button-prev { left: 10px; }
+        .custom-swiper-button-next { right: 10px; }
+        .custom-swiper-pagination {
+            position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%);
+            z-index: 10; display: flex; gap: 8px;
+        }
+        .custom-swiper-pagination-bullet {
+            width: 10px; height: 10px; background-color: #FFA500; border-radius: 50%;
+            opacity: 0.7; cursor: pointer; transition: all 0.3s ease;
+        }
+        .custom-swiper-pagination-bullet-active {
+            background-color: #CC5200 !important; width: 12px; height: 12px;
+            opacity: 1; box-shadow: 0 0 5px rgba(204, 82, 0, 0.5);
+        }
+
+        .hamburger {
+            width: 28px; height: 20px; position: relative; display: flex;
+            flex-direction: column; justify-content: space-between; cursor: pointer; z-index: 60;
+        }
+        .hamburger span {
+            display: block; width: 100%; height: 3px; background-color: #000000;
+            border-radius: 2px; transition: all 0.3s ease-in-out; transform-origin: center center;
+            margin: 0;
+            padding: 0;
+        }
+        .hamburger span:nth-child(2) {
+            transform: none;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: translateY(0); }
+        .hamburger.open span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+
+        #mobile-menu {
+            background-color: white; position: absolute; top: 100%; left: 0; width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); overflow: hidden; max-height: 0;
+            opacity: 0; transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; z-index: 55;
+        }
+        #mobile-menu.active { max-height: 300px; opacity: 1; }
+        #mobile-menu a {
+            text-align: center; color: #FF6600; padding: 0.75rem; display: block;
+            border-radius: 0.5rem; margin-bottom: 0.25rem; font-size: 1.1rem;
+        }
+        #mobile-menu a:hover { background-color: #FFF3E0; } /* Fondo claro al pasar el ratón */
+
+        @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
+        .whatsapp-float { animation: float 3s ease-in-out infinite; }
+
+        /* Estilos específicos para el botón de WhatsApp flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 50%;
+            box-shadow: none;
+            transition: transform 0.3s ease-in-out;
+            z-index: 40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .announcement-bar {
+            background-color: #CC5200; color: white; font-size: 0.75rem; font-weight: 600;
+            text-align: center; padding: 0.25rem 0; line-height: 1; overflow: hidden;
+            z-index: 60; position: fixed; top: 0; width: 100%; display: flex;
+            align-items: center; justify-content: center;
+            height: var(--announcement-bar-height, 20px);
+        }
+        @media (min-width: 640px) { .announcement-bar { font-size: 0.875rem; --announcement-bar-height: 24px; } }
+        @media (max-width: 639px) { .announcement-bar { font-size: 0.6rem; --announcement-bar-height: 18px; } }
+        .announcement-text-wrapper { display: flex; white-space: nowrap; animation: marquee 45s linear infinite; }
+        .marquee-phrase { margin-right: 12rem; }
+        @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+
+        .modal-project, .modal-terms {
+            display: none; position: fixed; 
+            top: calc(var(--announcement-bar-height, 24px) + var(--header-height-desktop, 80px));
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            z-index: 100;
+            overflow-y: scroll;
+        }
+        @media (max-width: 767px) {
+            .modal-project, .modal-terms {
+                top: calc(var(--announcement-bar-height, 18px) + var(--header-height-mobile, 70px));
+            }
+        }
+        .modal-project.active, .modal-terms.active { display: block; }
+
+        /* Estilos de encabezado por defecto (Escritorio) */
+        #header {
+            background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            z-index: 101;
+            position: fixed; width: 100%;
+            height: var(--header-height-desktop, 80px);
+            min-height: var(--header-height-desktop, 80px);
+            top: var(--announcement-bar-height, 24px);
+        }
+        #header .container { padding-top: 0; padding-bottom: 0; height:100%;}
+        #header .flex { align-items: center; justify-content: space-between; height: 100%; gap: 0; }
+
+        /* Tamaño y posicionamiento del encabezado móvil para el encabezado principal */
+        @media (max-width: 767px) {
+            #header {
+                --header-height-mobile: 70px;
+                height: var(--header-height-mobile);
+                min-height: var(--header-height-mobile);
+                top: var(--announcement-bar-height, 18px);
+            }
+            #header .flex {
+                padding: 0.25rem 0;
+                align-items: center;
+            }
+            #header .flex-shrink-0 {
+                 margin-left: 0.75rem;
+            }
+            #header .flex-shrink-0 a {
+                font-size: 1.5rem;
+            }
+            #header .hamburger {
+                margin-right: 0.75rem;
+            }
+            #contacto .flex-col-reverse-mobile { flex-direction: column-reverse; }
+        }
+
+        /* Nueva línea divisoria pegajosa para los modales */
+        .modal-sticky-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Ajustar relleno para el contenido del modal después de la nueva línea divisoria */
+        .modal-project .container, .modal-terms .container {
+            padding-top: 20px;
+        }
+        @media (min-width: 768px) {
+            .modal-project .container, .modal-terms .container {
+                padding-top: 20px;
+            }
+        }
+
+        .noise-texture::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 4px 4px; opacity: 0.05; pointer-events: none; z-index: 0;
+        }
+        #proyectos, #contacto { position: relative; }
+        #proyectos { background-color: #F8F8F8; } /* Fondo más claro, parecido al blanco del logo */
+        #contacto { background: white; }
+
+        .float-1 { animation: float 5s ease-in-out infinite; }
+        .float-2 { animation: float 5.5s ease-in-out infinite; }
+        .float-3 { animation: float 6s ease-in-out infinite; }
+        .float-4 { animation: float 6.5s ease-in-out infinite; }
+
+        .project-card {
+            display: flex; flex-direction: column; min-height: 380px;
+            position: relative; overflow: visible;
+        }
+        .project-card img { height: 224px; object-fit: cover; transition: none; transform: none; }
+
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 0.5rem; }
+        .faq-question {
+            display: block; padding: 0.75rem; font-size: 1.25rem; font-weight: 500;
+            color: #FF6600; cursor: pointer; transition: all 0.3s ease; text-align: center;
+        }
+        .faq-question:hover { color: #CC5200; transform: scale(1.02); }
+        .faq-answer {
+            max-height: 0; opacity: 0; padding: 0 1rem; color: #4A4A4A;
+            background-color: #F8F8F8; overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-answer.active { max-height: 500px; opacity: 1; padding: 1rem; }
+
+        /* Estilos para el contenedor del botón "Volver" y el botón en sí */
+        .back-button-box {
+            border: 2px solid #CC5200;
+            padding: 0.25rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+        }
+
+        .back-button-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+        }
+
+        /* Efecto hover específico para el botón "Volver" */
+        .btn-back-modal {
+            @apply bg-[#FF6600] text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 ease-in-out;
+        }
+        .btn-back-modal:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .project-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .project-images img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 0 auto; }
+        
+        @media (max-width: 1024px) {
+            .project-images { display: none; }
+            .swiper-container-project { display: block; }
+        }
+        @media (min-width: 1025px) {
+            .project-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .swiper-container-project { display: none !important; }
+        }
+
+        @media (max-width: 767px) {
+            .project-card { min-height: auto; }
+            .project-card img { height: 150px; }
+            .faq-item { margin-bottom: 0.125rem; }
+            .faq-question { font-size: 1rem; padding: 0.5rem; }
+            .faq-answer { font-size: 0.875rem; }
+            .btn-secondary { padding: 0.75rem 2rem; font-size: 0.875rem; }
+            .swiper-container-project { max-width: 100%; height: auto; aspect-ratio: 4/3; max-height: 300px; }
+
+            body {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            body::-webkit-scrollbar {
+                display: none;
+            }
+            .modal-project, .modal-terms {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .modal-project::-webkit-scrollbar,
+            .modal-terms::-webkit-scrollbar {
+                display: none;
+            }
+
+            section:not(#inicio):not(.modal-project):not(.modal-terms) {
+                padding-top: 30px !important;
+            }
+        }
+        @media (max-width: 639px) {
+            html, body { width: 100%; margin: 0; padding: 0; overflow-x: hidden; }
+            .container { max-width: 100%; padding-left: 1rem; padding-right: 1rem; box-sizing: border-box; }
+            .section-title { font-size: 2rem; }
+            .section-subtitle { font-size: 1rem; }
+            .modal-project .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+        }
+
+        .modal-project h2 { margin-top: 1.5rem; }
+        .modal-project .swiper-container-project { margin-top: 4rem; }
+        @media (max-width: 767px) {
+            .modal-project .swiper-container-project {
+                margin-top: 1rem;
+            }
+        }
+
+        .modal-project footer, .modal-terms footer { width: 100%; position: relative; }
+        .modal-project footer .container, .modal-terms footer .container { padding-top: 1rem; padding-bottom: 1rem; }
+        #como-trabajamos .faq-container { margin-top: 2rem; }
+
+        @keyframes bounce-down { 0% { transform: translateY(0) translateX(-50%); } 50% { transform: translateY(10px) translateX(-50%); } 100% { transform: translateY(0) translateX(-50%); } }
+        .scroll-indicator {
+            display: none;
+            position: fixed; bottom: 20px; left: 50%;
+            transform: translateX(-50%);
+            color: #CC5200;
+            animation: bounce-down 1.8s infinite;
+            text-align: center; line-height: 1; z-index: 30;
+        }
+        @media (max-width: 767px) {
+            .scroll-indicator svg {
+                width: 3rem;
+                height: 3rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .scroll-indicator svg {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+
+        /* Eliminado: .discount-badge y .shimmer-text */
+
+        section:not(#inicio):not(.modal-project):not(.modal-terms) {
+            padding-top: 70px;
+        }
+        #inicio {
+             padding-top: 0;
+        }
+        #como-trabajamos { padding-bottom: 96px; }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3; border-top: 4px solid #CC5200; border-radius: 50%;
+            width: 30px; height: 30px; animation: spin 1s linear infinite;
+            display: inline-block; margin-left: 10px; vertical-align: middle;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* === ESTILOS DE VISTA INICIAL MÓVIL (max-width: 767px) === */
+        @media (max-width: 767px) {
+            :root {
+                --announcement-bar-h-mobile: 18px;
+                --header-h-mobile: 70px;
+            }
+
+            /* Altura total de elementos fijos en la parte superior */
+            .mobile-fixed-top-offset {
+                height: calc(var(--announcement-bar-h-mobile) + var(--header-h-mobile));
+            }
+            
+            section#inicio.swiper-container-hero {
+                /* La sección del héroe comienza después del encabezado fijo */
+                margin-top: calc(var(--announcement-bar-h-mobile) + var(--header-h-mobile));
+                height: calc(60vh - var(--announcement-bar-h-mobile) - var(--header-h-mobile));
+                min-height: 250px;
+            }
+            section#inicio.swiper-container-hero .swiper-slide {
+                min-height: 100%;
+            }
+
+            section#proyectos {
+                margin-top: 0;
+            }
+            section#proyectos > .container > .text-center:first-child {
+                margin-top: 0;
+                margin-bottom: 0.5rem !important;
+            }
+            section#proyectos > .container > .text-center:first-child > h2[data-aos="fade-up"] {
+                margin-bottom: 0.5rem;
+                font-size: 1.75rem;
+            }
+            section#proyectos > .container > .text-center:first-child > p[data-aos="fade-up"] {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+        /* CAMBIO ADICIONAL: Ajuste para pantallas aún más pequeñas (ej. 320px - 480px) */
+        @media (max-width: 480px) {
+            section#inicio.swiper-container-hero {
+                height: calc(65vh - var(--announcement-bar-h-mobile) - var(--header-h-mobile));
+                min-height: 200px;
+            }
+            section#proyectos > .container > .text-center:first-child > h2[data-aos="fade-up"] {
+                font-size: 1.5rem;
+                line-height: 1.2;
+            }
+            section#proyectos > .container > .text-center:first-child > p[data-aos="fade-up"] {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* === AJUSTES ESPECÍFICOS PARA MÓVILES DE 667PX DE ALTO O MENOS === */
+        @media (max-height: 667px) and (max-width: 767px) {
+            section#inicio.swiper-container-hero {
+                height: calc(55vh - var(--announcement-bar-h-mobile) - var(--header-h-mobile));
+                min-height: 200px;
+            }
+            section#proyectos > .container > .text-center:first-child {
+                margin-bottom: 1rem;
+            }
+            section#proyectos > .container > .text-center:first-child > p[data-aos="fade-up"] {
+                margin-bottom: 0.5rem;
+            }
+        }
+        /* === FIN DE AJUSTES ESPECÍFICOS === */
+
+    </style>
+
+    <!-- Schema.org Markup for LocalBusiness and WebPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "WEC Construcciones",
+          "image": "https://www.wecconstrucciones.com.ar/logo.jpg",
+          "@id": "https://www.wecconstrucciones.com.ar/#organization",
+          "url": "https://www.wecconstrucciones.com.ar/",
+          "telephone": "+5491151063817",
+          "email": "info@wecconstrucciones.com.ar",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Buenos Aires",
+            "addressRegion": "CABA",
+            "addressCountry": "AR"
+          },
+          "areaServed": [
+            {
+              "@type": "AdministrativeArea",
+              "name": "Ciudad Autónoma de Buenos Aires"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Gran Buenos Aires",
+              "hasPart": [
+                "Escobar", "General San Martín", "Hurlingham", "José C. Paz",
+                "Malvinas Argentinas", "Moreno", "Pilar", "San Fernando",
+                "San Isidro", "San Miguel", "Tigre", "Tres de Febrero", "Vicente López"
+              ]
+            }
+          ],
+          "knowsAbout": "Construcción de pozos ciegos, construcción de hornos de barro, construcción de muros, obras de hormigón",
+          "slogan": "Construimos tus proyectos con solidez y calidad",
+          "description": "WEC Construcciones se dedica a la construcción de pozos ciegos, hornos de barro y muros de alta calidad en CABA y GBA."
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.wecconstrucciones.com.ar/#webpage",
+          "url": "https://www.wecconstrucciones.com.ar/",
+          "name": "WEC Construcciones: Pozos Ciegos, Hornos de Barro y Muros en CABA y GBA",
+          "isPartOf": { "@id": "https://www.wecconstrucciones.com.ar/#website" },
+          "about": { "@id": "https://www.wecconstrucciones.com.ar/#organization" },
+          "description": "WEC Construcciones es líder en la construcción de pozos ciegos, hornos de barro y muros de alta calidad en CABA y Gran Buenos Aires. Diseñamos y construimos tus proyectos con experiencia y garantía. ¡Cotiza online!",
+          "inLanguage": "es-AR"
+        }
+      ]
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17160847773">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17160847773');
+</script>
+<!-- Event snippet for Envio de formulario para clientes potenciales conversion page -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17160847773/aAC8CirqtoEJ2D9Y',
+        'value': 1.0,
+        'currency': 'ARS',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
+</head>
+<body class="bg-white overflow-x-hidden">
+
+    <div class="announcement-bar">
+        <div class="announcement-text-wrapper">
+            <span class="marquee-phrase">PRESUPUESTOS GRATIS</span>
+            <span class="marquee-phrase">ESCRIBINOS AL WHATSAPP SIN COMPROMISO</span>
+            <span class="marquee-phrase">MÁS DE 10 AÑOS DE EXPERIENCIA EN CONSTRUCCIÓN</span>
+            <span class="marquee-phrase">PRESUPUESTOS GRATIS</span>
+            <span class="marquee-phrase">ESCRIBINOS AL WHATSAPP SIN COMPROMISO</span>
+            <span class="marquee-phrase">MÁS DE 10 AÑOS DE EXPERIENCIA EN CONSTRUCCIÓN</span>
+            <span class="marquee-phrase">PRESUPUESTOS GRATIS</span>
+            <span class="marquee-phrase">ESCRIBINOS AL WHATSAPP SIN COMPROMISO</span>
+            <span class="marquee-phrase">MÁS DE 10 AÑOS DE EXPERIENCIA EN CONSTRUCCIÓN</span>
+            <span class="marquee-phrase">PRESUPUESTOS GRATIS</span>
+            <span class="marquee-phrase">ESCRIBINOS AL WHATSAPP SIN COMPROMISO</span>
+            <span class="marquee-phrase">MÁS DE 10 AÑOS DE EXPERIENCIA EN CONSTRUCCIÓN</span>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="text-3xl font-bold text-[#CC5200]">WEC Construcciones</a>
+                </div>
+                <div class="hidden md:block">
+                    <nav class="ml-10 flex items-center space-x-4">
+                        <a href="#inicio" class="text-gray-700 hover:text-[#FF6600] px-3 py-2 rounded-md text-md font-medium">Inicio</a>
+                        <a href="#proyectos" class="text-gray-700 hover:text-[#FF6600] px-3 py-2 rounded-md text-md font-medium">Servicios</a>
+                        <a href="#como-trabajamos" class="text-gray-700 hover:text-[#FF6600] px-3 py-2 rounded-md text-md font-medium">Cómo Trabajamos</a>
+                        <a href="#sobre-nosotros" class="text-gray-700 hover:text-[#FF6600] px-3 py-2 rounded-md text-md font-medium">Sobre Nosotros</a>
+                        <a href="#contacto" class="text-gray-700 hover:text-[#FF6600] px-3 py-2 rounded-md text-md font-medium">Contacto</a>
+                    </nav>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-[#FF6600] focus:outline-none focus:ring-0 focus:border-transparent">
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium close-menu-link">Inicio</a>
+                <a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium close-menu-link">Servicios</a>
+                <a href="#como-trabajamos" class="block px-3 py-2 rounded-md text-base font-medium close-menu-link">Cómo Trabajamos</a>
+                <a href="#sobre-nosotros" class="block px-3 py-2 rounded-md text-base font-medium close-menu-link">Sobre Nosotros</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium close-menu-link">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="swiper-container-hero">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('foto1.jpg')">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10 text-center text-white p-4 flex flex-col justify-center items-center h-full md:justify-center md:pt-24" data-aos="fade-up">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-shadow-custom">WEC Construcciones</h1>
+                    <p class="text-xl sm:text-2xl md:text-3xl mb-8 text-shadow-custom">Realizamos excavaciones, pozos ciegos y limpieza integral de tejas.</p>
+                    <a href="#contacto" class="btn-primary text-lg">Cotizá gratis por WhatsApp ahora</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('foto2.jpg')">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10 text-center text-white p-4 flex flex-col justify-center items-center h-full md:justify-center md:pt-24">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-shadow-custom">Realizamos excavaciones en CABA y GBA</h1>
+                    <p class="text-xl sm:text-2xl mb-8 text-shadow-custom">Con retiro de tierra incluido.</p>
+                    <a href="#proyectos" class="btn-primary text-lg">Contactanos</a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('foto3.jpg')">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10 text-center text-white p-4 flex flex-col justify-center items-center h-full md:justify-center md:pt-24">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-shadow-custom">Realizamos limpieza integral de tejas</h1>
+                    <p class="text-xl sm:text-2xl md:text-3xl mb-8 text-shadow-custom">Le damos nueva vida a la fachada de tu casa.</p>
+                    <a href="#contacto" class="btn-primary text-lg">Escribinos al WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+    <div id="scroll-indicator" class="scroll-indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+    </div>
+
+    <section id="proyectos" class="py-16 md:py-24 noise-texture">
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-4" data-aos="fade-up" data-aos-offset="50">Conocé nuestros servicios</h2>
+                <p class="text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100" data-aos-offset="50">Calidad y excelencia en cada trabajo que realizamos.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <a href="#project-1" class="block w-full h-full open-modal" data-previous-section="proyectos">
+                    <div class="bg-white rounded-xl shadow-xl group border border-gray-100 hover:border-[#FF6600] card-hover-effect project-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="servicio1.jpg" alt="Construcción de Pozo Ciego Standard" class="w-full" onerror="this.src='https://placehold.co/600x400/cccccc/FFFFFF?text=Pozo+Ciego+no+disponible'">
+                        <div class="p-6 content">
+                            <div>
+                                <h3 class="text-xl font-semibold text-[#CC5200] mb-3 text-center">Excavaciones</h3>
+                                <p class="text-gray-600 text-sm mb-2 text-center"></p>
+                                <div class="text-center mt-4">
+                                    <p class="text-xl font-bold text-gray-800">Desde $800.000</p>
+                                </div>
+                            </div>
+                            <div class="btn-secondary text-center block w-fit mx-auto rounded-lg mt-4">Ver Más</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#project-2" class="block w-full h-full open-modal" data-previous-section="proyectos">
+                    <div class="bg-white rounded-xl shadow-xl group border border-gray-100 hover:border-[#FF6600] card-hover-effect project-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="servicio2.jpg" alt="Construcción de Horno de Barro Tradicional" class="w-full" onerror="this.src='https://placehold.co/600x400/bbbbbb/FFFFFF?text=Horno+de+Barro+no+disponible'">
+                        <div class="p-6 content">
+                            <div>
+                                <h3 class="text-xl font-semibold text-[#CC5200] mb-3 text-center">Pozos ciegos</h3>
+                                <p class="text-gray-600 text-sm mb-2 text-center">Ideal para tus asados y comidas al aire libre. Construido con materiales refractarios de primera calidad.</p>
+                                <div class="text-center mt-4">
+                                    <p class="text-xl font-bold text-gray-800">Desde $800.000</p>
+                                </div>
+                            </div>
+                            <div class="btn-secondary text-center block w-fit mx-auto rounded-lg mt-4">Ver Más</div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#project-3" class="block w-full h-full open-modal" data-previous-section="proyectos">
+                    <div class="bg-white rounded-xl shadow-xl group border border-gray-100 hover:border-[#FF6600] card-hover-effect project-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="servicio3.jpg" alt="Construcción de Muro de Contención" class="w-full" onerror="this.src='https://placehold.co/600x400/aaaaaa/FFFFFF?text=Muro+no+disponible'">
+                        <div class="p-6 content">
+                            <div>
+                                <h3 class="text-xl font-semibold text-[#CC5200] mb-3 text-center">Limpieza de tejados</h3>
+                                <p class="text-gray-600 text-sm mb-2 text-center">Garantiza la estabilidad y seguridad de tu terreno. Diseño adaptado a las características de tu propiedad.</p>
+                                <div class="text-center mt-4">
+                                    <p class="text-xl font-bold text-gray-800">Desde $400.000</p>
+                                </div>
+                            </div>
+                            <div class="btn-secondary text-center block w-fit mx-auto rounded-lg mt-4">Ver Más</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-1" class="modal-project">
+        <div class="modal-sticky-divider"></div>
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-8">Pozo Ciego Standard</h2>
+            <div class="text-center mb-4">
+                <p class="text-3xl font-bold text-gray-800">$1.500.000</p>
+                <p class="text-sm text-gray-500 mt-2">Precio sin impuestos nacionales: $1.185.000</p>
+            </div>
+            <div class="back-button-box mb-8"><a href="#proyectos" class="btn-back-modal close-modal" data-target-section="proyectos">Volver</a></div>
+            <div class="swiper-container-project mb-8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="servicio1-1.jpg" alt="Detalle de construcción de pozo ciego" onerror="this.src='https://placehold.co/900x500/cccccc/FFFFFF?text=Error+Img+1'"></div>
+                    <div class="swiper-slide"><img src="servicio1-2.jpg" alt="Proceso de excavación de pozo ciego" onerror="this.src='https://placehold.co/900x500/bbbbbb/FFFFFF?text=Error+Img+2'"></div>
+                    <div class="swiper-slide"><img src="servicio1-3.jpg" alt="Pozo ciego finalizado en terreno" onerror="this.src='https://placehold.co/900x500/aaaaaa/FFFFFF?text=Error+Img+3'"></div>
+                </div>
+                <div class="custom-swiper-button custom-swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></div>
+                <div class="custom-swiper-button custom-swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></div>
+                <div class="custom-swiper-pagination"></div>
+            </div>
+            <div class="project-images">
+                <img src="servicio1-1.jpg" alt="Detalle de construcción de pozo ciego" onerror="this.src='https://placehold.co/400x250/cccccc/FFFFFF?text=Error+Img+1'">
+                <img src="servicio1-2.jpg" alt="Proceso de excavación de pozo ciego" onerror="this.src='https://placehold.co/400x250/bbbbbb/FFFFFF?text=Error+Img+2'">
+                <img src="servicio1-3.jpg" alt="Pozo ciego finalizado en terreno" onerror="this.src='https://placehold.co/400x250/aaaaaa/FFFFFF?text=Error+Img+3'">
+            </div>
+            <div class="prose max-w-none">
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Descripción Detallada</h3>
+                <p class="text-gray-600 mb-4 text-justify">Nuestro pozo ciego estándar está diseñado para ofrecer una solución eficiente y duradera para el manejo de aguas residuales en propiedades sin acceso a cloacas. Construido con materiales de alta resistencia, garantiza una larga vida útil y un funcionamiento sin problemas. Ideal para viviendas unifamiliares y pequeños emprendimientos. Las imágenes son ilustrativas, para más información ver "Términos y Condiciones".</p>
+                <p class="text-justify">El precio incluye TODO: visita y evaluación del terreno, excavación, retiro de tierra, mano de obra especializada, y materiales de primera calidad. Sin letra chica ni sorpresas, pagás este monto dividido en tres etapas (inicio de obra, un pago intermedio y el último al finalizar), en 5 a 7 días hábiles ¡y listo! tu sistema de drenaje estará funcionando. </p>
+                <br>
+                <p class="text-justify">Se firma un contrato donde se plasma muy claramente cómo se va a organizar la obra, del cual se envía copia por WhatsApp previamente al día de la firma, así podés leerlo con tranquilidad y sin apuros. Una vez que el pozo ciego está terminado se te va a entregar un certificado de garantía donde consta el servicio de garantía de hasta 10 años para reparaciones estructurales.</p>
+                <br>
+                <p class="text-justify">Podés aprovechar nuestro servicio con estas características y precio, así como también se puede personalizar y te cotizamos el nuevo valor. No dudes en escribirnos al WhatsApp que respondemos todas tus dudas.</p>
+                <br>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Materiales Utilizados</h3>
+                <ul class="list-disc pl-5 text-gray-600 mb-4">
+                    <li>Bloques de hormigón reforzado</li>
+                    <li>Geotextil de alta densidad</li>
+                    <li>Tuberías de PVC cloacal</li>
+                    <li>Grava y arena de filtro</li>
+                </ul>
+            </div>
+            <div class="text-center my-12"><a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20pozo%20ciego%20est%C3%A1ndar." target="_blank" class="text-[#CC5200] hover:text-[#FF6600] text-lg font-semibold transition-colors whatsapp-conversion-link">Escribinos para adquirir este servicio o para que coticemos tu proyecto</a></div>
+        </div>
+        <footer class="bg-[#CC5200] text-white"> <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-4 text-center"><p class="mb-2">© <span id="currentYearFooter1"></span> WEC Construcciones. Todos los derechos reservados.</p><p class="text-sm text-amber-100"><a href="#terms" class="hover:text-white transition-colors open-terms" data-previous-section="project-1">Términos y Condiciones</a></p></div>
+        </footer>
+        <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="whatsapp-float whatsapp-conversion-link">
+            <img src="whatsapp.jpg" alt="Icono de WhatsApp para contacto" onerror="this.src='https://placehold.co/60x60/25D366/FFFFFF?text=WA'">
+        </a>
+    </section>
+
+    <section id="project-2" class="modal-project">
+        <div class="modal-sticky-divider"></div>
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-8">Horno de Barro Tradicional</h2>
+            <div class="text-center mb-4">
+                <p class="text-3xl font-bold text-gray-800">$2.000.000</p>
+                <p class="text-sm text-gray-500 mt-2">Precio sin impuestos nacionales: $1.580.000</p>
+            </div>
+            <div class="back-button-box mb-8"><a href="#proyectos" class="btn-back-modal close-modal" data-target-section="proyectos">Volver</a></div>
+            <div class="swiper-container-project mb-8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="servicio2-1.jpg" alt="Horno de barro recién construido" onerror="this.src='https://placehold.co/900x500/cccccc/FFFFFF?text=Error+Img+1'"></div>
+                    <div class="swiper-slide"><img src="servicio2-2.jpg" alt="Detalle de la boca del horno de barro" onerror="this.src='https://placehold.co/900x500/bbbbbb/FFFFFF?text=Error+Img+2'"></div>
+                    <div class="swiper-slide"><img src="servicio2-3.jpg" alt="Horno de barro en patio con detalles rústicos" onerror="this.src='https://placehold.co/900x500/aaaaaa/FFFFFF?text=Error+Img+3'"></div>
+                </div>
+                <div class="custom-swiper-button custom-swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></div>
+                <div class="custom-swiper-button custom-swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></div>
+                <div class="custom-swiper-pagination"></div>
+            </div>
+            <div class="project-images">
+                <img src="servicio2-1.jpg" alt="Horno de barro recién construido" onerror="this.src='https://placehold.co/400x250/cccccc/FFFFFF?text=Error+Img+1'">
+                <img src="servicio2-2.jpg" alt="Detalle de la boca del horno de barro" onerror="this.src='https://placehold.co/400x250/bbbbbb/FFFFFF?text=Error+Img+2'">
+                <img src="servicio2-3.jpg" alt="Horno de barro en patio con detalles rústicos" onerror="this.src='https://placehold.co/400x250/aaaaaa/FFFFFF?text=Error+Img+3'">
+            </div>
+            <div class="prose max-w-none">
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Descripción Detallada</h3>
+                <p class="text-gray-600 mb-4 text-justify">Nuestro horno de barro tradicional es el complemento perfecto para tu quincho o patio. Construido artesanalmente con ladrillos refractarios y materiales naturales, garantiza una cocción pareja y un sabor inigualable para tus pizzas, panes y asados. Un toque rústico y funcional para tu hogar. Las imágenes son ilustrativas, para más información ver "Términos y Condiciones".</p>
+                <p class="text-justify">El precio incluye TODO: visita y evaluación del lugar, mano de obra, materiales refractarios y aislamiento térmico. Sin letra chica ni sorpresas, pagás este monto dividido en tres etapas (inicio de obra, un pago intermedio y el último al finalizar), en 7 a 10 días hábiles ¡y listo! tu horno estará esperando para la próxima comida. </p>
+                <br>
+                <p class="text-justify">Se firma un contrato donde se plasma muy claramente cómo se va a organizar la obra, del cual se envía copia por WhatsApp previamente al día de la firma, así podés leerlo con tranquilidad y sin apuros. Una vez que el horno de barro está terminado se te va a entregar un certificado de garantía donde consta el servicio de garantía de hasta 10 años para reparaciones estructurales.</p>
+                <br>
+                <p class="text-justify">Podés aprovechar nuestro servicio con estas características y precio, así como también se puede personalizar y te cotizamos el nuevo valor. No dudes en escribirnos al WhatsApp que respondemos todas tus dudas.</p>
+                <br>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Materiales Utilizados</h3>
+                <ul class="list-disc pl-5 text-gray-600 mb-4">
+                    <li>Ladrillos refractarios de alta resistencia</li>
+                    <li>Barro y arena especiales para hornos</li>
+                    <li>Aislamiento térmico de perlita expandida</li>
+                    <li>Puerta de hierro forjado</li>
+                </ul>
+            </div>
+            <div class="text-center my-12"><a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20horno%20de%20barro." target="_blank" class="text-[#CC5200] hover:text-[#FF6600] text-lg font-semibold transition-colors whatsapp-conversion-link">Escribinos para adquirir este servicio o para que coticemos tu proyecto</a></div>
+        </div>
+        <footer class="bg-[#CC5200] text-white"><div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-4 text-center"><p class="mb-2">© <span id="currentYearFooter2"></span> WEC Construcciones. Todos los derechos reservados.</p><p class="text-sm text-amber-100"><a href="#terms" class="hover:text-white transition-colors open-terms" data-previous-section="project-2">Términos y Condiciones</a></p></div></footer>
+        <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="whatsapp-float whatsapp-conversion-link">
+            <img src="whatsapp.jpg" alt="Icono de WhatsApp para consultas" onerror="this.src='https://placehold.co/60x60/25D366/FFFFFF?text=WA'">
+        </a>
+    </section>
+
+    <section id="project-3" class="modal-project">
+        <div class="modal-sticky-divider"></div>
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-8">Muro de Contención Reforzado</h2>
+            <div class="text-center mb-4">
+                <p class="text-3xl font-bold text-gray-800">$1.800.000</p>
+                <p class="text-sm text-gray-500 mt-2">Precio sin impuestos nacionales: $1.422.000</p>
+            </div>
+            <div class="back-button-box mb-8"><a href="#proyectos" class="btn-back-modal close-modal" data-target-section="proyectos">Volver</a></div>
+            <div class="swiper-container-project mb-8">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="servicio3-1.jpg" alt="Muro de contención de hormigón en construcción" onerror="this.src='https://placehold.co/900x500/cccccc/FFFFFF?text=Error+Img+1'"></div>
+                    <div class="swiper-slide"><img src="servicio3-2.jpg" alt="Muro de contención con refuerzo de acero" onerror="this.src='https://placehold.co/900x500/bbbbbb/FFFFFF?text=Error+Img+2'"></div>
+                    <div class="swiper-slide"><img src="servicio3-3.jpg" alt="Muro de contención terminado con acabado de ladrillo" onerror="this.src='https://placehold.co/900x500/aaaaaa/FFFFFF?text=Error+Img+3'"></div>
+                </div>
+                <div class="custom-swiper-button custom-swiper-button-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg></div>
+                <div class="custom-swiper-button custom-swiper-button-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></div>
+                <div class="custom-swiper-pagination"></div>
+            </div>
+            <div class="project-images">
+                <img src="servicio3-1.jpg" alt="Muro de contención de hormigón en construcción" onerror="this.src='https://placehold.co/400x250/cccccc/FFFFFF?text=Error+Img+1'">
+                <img src="servicio3-2.jpg" alt="Muro de contención con refuerzo de acero" onerror="this.src='https://placehold.co/400x250/bbbbbb/FFFFFF?text=Error+Img+2'">
+                <img src="servicio3-3.jpg" alt="Muro de contención terminado con acabado de ladrillo" onerror="this.src='https://placehold.co/400x250/aaaaaa/FFFFFF?text=Error+Img+3'">
+            </div>
+            <div class="prose max-w-none">
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Descripción Detallada</h3>
+                <p class="text-gray-600 mb-4 text-justify">Construimos muros de contención reforzados, esenciales para estabilizar terrenos en desniveles, delimitar propiedades o crear espacios seguros. Nuestros muros están diseñados para soportar grandes presiones y garantizar la integridad de tu terreno por décadas. Ofrecemos soluciones a medida según las características del suelo y la topografía. Las imágenes son ilustrativas, para más información ver "Términos y Condiciones".</p>
+                <p class="text-justify">El precio incluye TODO: visita técnica, estudio de suelo, cálculo estructural, excavación, colocación de armadura, hormigonado, mano de obra y materiales. Sin letra chica ni sorpresas, pagás este monto dividido en tres etapas (inicio de obra, un pago intermedio y el último al finalizar), en 10 a 15 días hábiles ¡y listo! tu terreno estará seguro y protegido. </p>
+                <br>
+                <p class="text-justify">Se firma un contrato donde se plasma muy claramente cómo se va a organizar la obra, del cual se envía copia por WhatsApp previamente al día de la firma, así podés leerlo con tranquilidad y sin apuros. Una vez que el muro está terminado se te va a entregar un certificado de garantía donde consta el servicio de garantía de hasta 10 años para reparaciones estructurales.</p>
+                <br>
+                <p class="text-justify">Podés aprovechar nuestro servicio con estas características y precio, así como también se puede personalizar y te cotizamos el nuevo valor. No dudes en escribirnos al WhatsApp que respondemos todas tus dudas.</p>
+                <br>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">Materiales Utilizados</h3>
+                <ul class="list-disc pl-5 text-gray-600 mb-4">
+                    <li>Hormigón armado H21</li>
+                    <li>Acero corrugado para armaduras</li>
+                    <li>Encofrado de alta resistencia</li>
+                    <li>Drenajes perimetrales</li>
+                </ul>
+            </div>
+            <div class="text-center my-12"><a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20muro%20de%20contenci%C3%B3n." target="_blank" class="text-[#CC5200] hover:text-[#FF6600] text-lg font-semibold transition-colors whatsapp-conversion-link">Escribinos para adquirir este servicio o para que coticemos tu proyecto</a></div>
+        </div>
+        <footer class="bg-[#CC5200] text-white"><div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-4 text-center"><p class="mb-2">© <span id="currentYearFooter3"></span> WEC Construcciones. Todos los derechos reservados.</p><p class="text-sm text-amber-100"><a href="#terms" class="hover:text-white transition-colors open-terms" data-previous-section="project-3">Términos y Condiciones</a></p></div></footer>
+        <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="whatsapp-float whatsapp-conversion-link">
+            <img src="whatsapp.jpg" alt="Icono de WhatsApp para chatear" onerror="this.src='https://placehold.co/60x60/25D366/FFFFFF?text=WA'">
+        </a>
+    </section>
+
+    <section id="como-trabajamos" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-4" data-aos="fade-up">Así Convertimos Tu Proyecto en Realidad</h2>
+                <p class="text-lg text-gray-600" data-aos="fade-up" data-aos-delay="100">Nuestro proceso detallado en 4 simples pasos.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md shadow-gray-300 text-center float-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4"><svg class="w-16 h-16 mx-auto text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-[#CC5200] mb-2">1. Diseño y Presupuesto</h3>
+                    <p class="text-gray-600 text-sm">Realizamos una visita gratuita para evaluar tu proyecto. Podés elegir entre nuestros servicios estándar o solicitar un diseño personalizado.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md shadow-gray-300 text-center float-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m7-9v8m-4-8v8m-4-8v8"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-[#CC5200] mb-2">2. Preparación y Ejecución</h3>
+                    <p class="text-gray-600 text-sm">Preparamos el terreno con la maquinaria adecuada y comenzamos la fase de ejecución de la obra.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md shadow-gray-300 text-center float-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mb-4"><svg class="w-16 h-16 mx-auto text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4a4 4 0 014-4h10a4 4 0 014 4v4M7 13h10M7 13a4 4 0 01-4-4V7a4 4 0 014-4h10a4 4 0 014 4v2a4 4 0 01-4 4"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-[#CC5200] mb-2">3. Construcción</h3>
+                    <p class="text-gray-600 text-sm">Construimos la estructura con materiales de primera calidad, asegurando solidez y durabilidad conforme a los más altos estándares.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md shadow-gray-300 text-center float-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="mb-4"><svg class="w-16 h-16 mx-auto text-[#FF6600]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <h3 class="text-xl font-semibold text-[#CC5200] mb-2">4. Acabados y Entrega</h3>
+                    <p class="text-gray-600 text-sm">Realizamos los acabados finales y entregamos el proyecto listo para su uso, superando tus expectativas.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-4" data-aos="fade-up">Preguntas Frecuentes</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200"><div class="faq-question">¿Qué tipo de construcciones realizan?</div><div class="faq-answer text-center">Nos especializamos en pozos ciegos, hornos de barro y muros de contención. Ofrecemos soluciones estándar (ver sección "PROYECTOS") con precios que incluyen TODO para que tu proyecto esté listo, sin adicionales ni sorpresas. También realizamos obras personalizadas, para las cuales podés consultarnos sin compromiso y te enviamos un presupuesto.</div></div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300"><div class="faq-question">¿Las obras tienen garantía?</div><div class="faq-answer text-center">Sí, nuestras construcciones cuentan con garantía de 10 años para defectos estructurales. Todo ello se especifica en el correspondiente CERTIFICADO DE GARANTÍA que se entrega al finalizar la obra. </div></div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400"><div class="faq-question">¿En cuánto tiempo está lista la obra?</div><div class="faq-answer text-center">Varía según el tipo y tamaño del proyecto. Los pozos ciegos suelen demorar entre 5 a 7 días hábiles, mientras que los hornos de barro y muros entre 7 a 15 días hábiles para estar listos para usar.</div></div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600"><div class="faq-question">¿Puedo personalizar mi proyecto?</div><div class="faq-answer text-center">¡Claro que sí! Escuchamos tus ideas y te ofrecemos un presupuesto adaptado a tus necesidades. Los servicios estándar solo pueden modificarse con un ajuste en el precio.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-nosotros" class="py-16 md:py-24 bg-[#F8F8F8]">
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-6">Nuestra Pasión, Tu Construcción Perfecta</h2>
+                    <p class="text-gray-700 mb-4 leading-relaxed text-justify">En WEC Construcciones, llevamos más de 10 años dedicados a transformar los sueños de nuestros clientes en realidades sólidas. Nacimos como una empresa familiar con una visión clara: ofrecer construcciones de alta calidad, combinando diseño y funcionalidad con una ejecución impecable.</p>
+                    <p class="text-gray-700 mb-4 leading-relaxed text-justify">Nuestros valores fundamentales son la honestidad, el compromiso con el cliente y la búsqueda constante de la excelencia. Creemos que cada proyecto es único, un espacio que se construye para durar y generar valor.</p>
+                    <p class="text-gray-700 leading-relaxed text-justify">Contamos con un equipo de profesionales apasionados y experimentados, todos unidos por el objetivo de superar tus expectativas.</p>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <img src="nosotros.jpg" alt="Equipo de WEC Construcciones trabajando en una obra" class="rounded-xl shadow-2xl w-full md:max-w-md mx-auto" onerror="this.src='https://placehold.co/500x350/dddddd/FFFFFF?text=Sobre+Nosotros+no+disponible'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16 md:py-24 noise-texture">
+        <div class="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-4" data-aos="fade-up">Comenzá Tu Proyecto Hoy</h2>
+                <p class="text-lg text-gray-700" data-aos="fade-up" data-aos-delay="100">Contactanos y hagamos realidad tus ideas.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row-reverse gap-16 flex-col-reverse-mobile">
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-md shadow-lg flex-1" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-[#CC5200] mb-4 text-center">Zonas de Servicio: CABA y zonas de Gran Buenos Aires</h3>
+                    <div class="w-full aspect-[4/3]">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d210146.6820999417!2d-58.79036034305877!3d-34.61566246998907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses!2sar!4v1620997954897!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Buenos Aires y Gran Buenos Aires - Zonas de Servicio de WEC Construcciones"></iframe>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-4 sm:p-6 rounded-md shadow-lg flex-1 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-2xl font-semibold text-[#CC5200] mb-6 text-center">Datos de Contacto</h3>
+                    <p class="text-gray-600 mb-6 text-center text-lg">Teléfono: <a href="tel:+5491151063817" class="hover:text-[#FF6600] transition-colors">1151063817</a></p>
+                    <p class="text-gray-600 mb-6 text-center text-lg">Email: <a href="mailto:info@wecconstrucciones.com.ar" class="hover:text-[#FF6600] transition-colors">info@wecconstrucciones.com.ar</a></p>
+                    <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" class="bg-[#25D366] text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out text-center block mx-auto mt-4 whatsapp-conversion-link">Escribinos al WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer" class="bg-[#CC5200] text-white">
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="mb-2">© <span id="currentYearFooterMain"></span> WEC Construcciones. Todos los derechos reservados.</p>
+            <p class="text-sm text-amber-100"><a href="#terms" class="hover:text-white transition-colors open-terms" data-previous-section="main-footer">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+    <section id="terms" class="modal-terms">
+        <div class="modal-sticky-divider"></div>
+        <div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#CC5200] mb-8 text-center">Términos y Condiciones</h2>
+            <div class="back-button-box mb-8"><a href="#" class="btn-back-modal close-terms" data-target-section="">Volver</a></div>
+            <div class="prose max-w-none text-gray-600">
+                <p class="mb-4 text-justify">Bienvenido(a) a WEC Construcciones. Al utilizar nuestros servicios o navegar por nuestro sitio web, usted acepta los siguientes términos y condiciones que rigen la relación entre WEC Construcciones y sus clientes. Le recomendamos leer detenidamente este documento antes de proceder con cualquier solicitud, cotización o contratación de nuestros servicios.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">1. Generalidades</h3> <p class="mb-4 text-justify">WEC Construcciones es una empresa dedicada a la construcción de pozos ciegos, hornos de barro y muros de alta calidad, operando en la Ciudad Autónoma de Buenos Aires (CABA) y en los siguientes partidos del Gran Buenos Aires: Escobar, General San Martín, Hurlingham, José C. Paz, Malvinas Argentinas, Moreno, Pilar, San Fernando, San Isidro, San Miguel, Tigre, Tres de Febrero y Vicente López. La empresa no constituye una sociedad y pertenece exclusivamente al Sr. Walter Emilio Cárdenas con CUIT 20-37015634-5. Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento, notificando a nuestros usuarios a través de nuestro sitio web. El uso continuado de nuestros servicios tras dichas modificaciones implica la aceptación de los nuevos términos.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">2. Servicios y Contratación</h3> <p class="mb-4 text-justify">Los servicios de WEC Construcciones incluyen, pero no se limitan a, el diseño, excavación, construcción y entrega final de pozos ciegos, hornos de barro y muros. El cliente puede elegir alguno de los tres servicios estándar (ver apartado "Proyectos") disponibles únicamente para la Ciudad Autónoma de Buenos Aires (CABA) y en los siguientes partidos del Gran Buenos Aires: Escobar, General San Martín, Hurlingham, José C. Paz, Malvinas Argentinas, Moreno, Pilar, San Fernando, San Isidro, San Miguel, Tigre, Tres de Febrero y Vicente López. Para ubicaciones por fuera de las mencionadas, los servicios estándar no son vinculantes y nos reservamos el derecho de ofertar o no, asimismo el precio ofertado puede sufrir modificaciones. Desde la solicitud del cliente hasta la firma del contrato pueden transcurrir hasta 10 días hábiles según disponibilidad.</p>
+                <h3 class="2xl font-semibold text-[#CC5200] mb-4">3. Pagos</h3> <p class="mb-4 text-justify">Los pagos deberán realizarse según el cronograma establecido en el contrato, el cual incluirá un anticipo inicial al firmar el mismo, un pago parcial durante la ejecución de la obra y un saldo final al momento de la entrega. Aceptamos pagos mediante transferencia bancaria o efectivo, según disponibilidad y previo acuerdo. En caso de retrasos en los pagos, nos resevamos el derecho de aplicar las cláusulas pertinentes en el contrato.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">4. Garantías y Responsabilidad</h3> <p class="mb-4 text-justify">WEC Construcciones ofrece una garantía de 10 años sobre la estructura de la construcción. Esta garantía cubre defectos de fabricación y construcción, pero no incluye daños causados por mal uso, falta de mantenimiento, desastres naturales o modificaciones no autorizadas por WEC Construcciones. Todo ello se especifica en el correspondiente CERTIFICADO DE GARANTÍA que se entrega al finalizar la obra.</p> <p class="mb-4 text-justify">El cliente será responsable de obtener los permisos municipales necesarios para la construcción, así como de garantizar el acceso al terreno para nuestro equipo y maquinaria. WEC Construcciones no se hace responsable por daños a terceros o al terreno causados por condiciones preexistentes no informadas por el cliente.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">5. Propiedad Intelectual</h3> <p class="mb-4 text-justify">Todas las imágenes creadas por WEC Construcciones son propiedad del propietario de la empresa y no pueden ser reproducidos, distribuidos o utilizados sin su consentimiento expreso. Las imágenes publicadas en este sitio web tienen fines ilustrativos y no pueden ser utilizadas para otros fines sin autorización. Las imágenes son ilustrativas de los servicios y no son vinculantes. Los servicios se detallan en el contrato.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">6. Privacidad</h3> <p class="mb-4 text-justify">En WEC Construcciones, no recopilamos datos personales mediante el sitio web. Al comunicarse por correo electrónico o WhatsApp se aplican las políticas de privacidad de esas empresas, se recomienda consultarlas. Los únicos datos personales recopilados serán para fines meramente contractuales y nos comprometemos a no divulgarlo, compartirlo o darle un uso ajeno a tales fines.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">7. Ley Aplicable y Jurisdicción</h3> <p class="mb-4 text-justify">Estos términos y condiciones se rigen por las leyes de la República Argentina. Cualquier disputa que surja en relación con nuestros servicios será sometida a la jurisdicción de los tribunales nacionales con asiento en la Ciudad Autónoma de Buenos Aires, renunciando expresamente a cualquier otra jurisdicción que pudiera corresponder.</p>
+                <h3 class="text-2xl font-semibold text-[#CC5200] mb-4">8. Contacto</h3> <p class="mb-4 text-justify">Si tienes alguna pregunta sobre estos términos y condiciones, no dudes en contactarnos a través de nuestro correo electrónico <a href="mailto:info@wecconstrucciones.com.ar" class="text-[#CC5200] hover:text-[#FF6600] transition-colors">info@wecconstrucciones.com.ar</a> o por teléfono al <a href="tel:+5491151063817" class="text-[#CC5200] hover:text-[#FF6600] transition-colors">+54 9 11 5106-3817</a>. También puedes escribirnos directamente por WhatsApp haciendo clic en el botón de contacto.</p>
+                <p class="mt-8 text-center">Última actualización: 24 de junio de 2025</p>
+            </div>
+        </div>
+        <footer class="bg-[#CC5200] text-white"><div class="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-4 text-center"><p class="mb-2">© <span id="currentYearTerms"></span> WEC Construcciones. Todos los derechos reservados.</p><p class="text-sm text-amber-100"><a href="#terms" class="hover:text-white transition-colors open-terms" data-previous-section="terms">Términos y Condiciones</a></p></div></footer>
+        <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="whatsapp-float whatsapp-conversion-link">
+            <img src="whatsapp.jpg" alt="Icono de WhatsApp para contactar" onerror="this.src='https://placehold.co/60x60/25D366/FFFFFF?text=WA'">
+        </a>
+    </section>
+
+    <a href="https://wa.me/5491151063817?text=Hola%20WEC%20Construcciones,%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n." target="_blank"
+       class="whatsapp-float whatsapp-conversion-link"
+       data-aos="fade-left" data-aos-offset="0" data-aos-delay="1000">
+        <img src="whatsapp.jpg" alt="Icono flotante de WhatsApp" onerror="this.src='https://placehold.co/60x60/25D366/FFFFFF?text=WA'">
+    </a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Configuración General ---
+            const yearSpans = ['currentYearFooter1', 'currentYearFooter2', 'currentYearFooter3', 'currentYearFooterMain', 'currentYearTerms'];
+            yearSpans.forEach(id => {
+                const span = document.getElementById(id);
+                if (span) span.textContent = new Date().getFullYear();
+            });
+
+            AOS.init({ duration: 800, once: false });
+            window.addEventListener('scroll', () => AOS.refresh());
+
+            // --- Swipers ---
+            const swiperHero = new Swiper('.swiper-container-hero', {
+                loop: true, autoplay: { delay: 5000, disableOnInteraction: false },
+                pagination: { el: '.swiper-container-hero .swiper-pagination', clickable: true },
+                navigation: { nextEl: '.swiper-container-hero .swiper-button-next', prevEl: '.swiper-container-hero .swiper-button-prev' },
+            });
+
+            function initializeProjectSwipers() {
+                const screenWidth = window.innerWidth;
+                document.querySelectorAll('.swiper-container-project').forEach(swiperEl => {
+                    if (screenWidth <= 1024) {
+                        if (!swiperEl.swiper) {
+                            new Swiper(swiperEl, {
+                                loop: true, autoplay: { delay: 3000, disableOnInteraction: false },
+                                pagination: { el: swiperEl.querySelector('.custom-swiper-pagination'), clickable: true, bulletClass: 'custom-swiper-pagination-bullet', bulletActiveClass: 'custom-swiper-pagination-bullet-active' },
+                                navigation: { nextEl: swiperEl.querySelector('.custom-swiper-button-next'), prevEl: swiperEl.querySelector('.custom-swiper-button-prev') },
+                            });
+                        }
+                    } else {
+                        if (swiperEl.swiper) swiperEl.swiper.destroy(true, true);
+                    }
+                });
+            }
+            initializeProjectSwipers();
+            window.addEventListener('resize', initializeProjectSwipers);
+
+            // --- Menú Móvil ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const allMobileMenuLinks = document.querySelectorAll('#mobile-menu a'); 
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('active');
+                    mobileMenuButton.querySelector('.hamburger').classList.toggle('open');
+                });
+            }
+
+            function closeActiveMobileMenus() {
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('active');
+                    if (mobileMenuButton) mobileMenuButton.querySelector('.hamburger').classList.remove('open');
+                }
+            }
+
+            allMobileMenuLinks.forEach(link => {
+                if (link.classList.contains('close-menu-link')) {
+                     link.addEventListener('click', closeActiveMobileMenus);
+                }
+            });
+
+            document.body.addEventListener('click', (event) => {
+                // Si se hace clic fuera del menú móvil principal y su botón
+                if (mobileMenuButton && mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    closeActiveMobileMenus();
+                }
+            });
+
+
+            // --- Modales y Gestión del Historial ---
+            const allModals = document.querySelectorAll('.modal-project, .modal-terms');
+            const openModalLinks = document.querySelectorAll('.open-modal, .open-terms');
+            const closeModalButtons = document.querySelectorAll('.close-modal, .close-terms, .close-modal-to-main');
+            
+            // Variable para almacenar la posición de scroll de la página principal
+            let mainPageScrollY = 0;
+
+            function openModal(targetModalId, openerLink) {
+                mainPageScrollY = window.scrollY; // Guarda la posición de scroll actual
+
+                const targetModal = document.getElementById(targetModalId);
+                if (targetModal) {
+                    // Establece el objetivo para el botón "Volver" en el modal de Términos si se abre desde un modal de proyecto
+                    if (targetModalId === 'terms') {
+                        const termsBackButton = document.getElementById('terms').querySelector('.close-terms');
+                        if (termsBackButton) {
+                            if (openerLink.closest('.modal-project')) {
+                                termsBackButton.dataset.targetSection = openerLink.closest('.modal-project').id;
+                            } else {
+                                termsBackButton.dataset.targetSection = openerLink.dataset.previousSection || 'main-footer';
+                            }
+                        }
+                    }
+
+                    // Congela la página principal *antes* de mostrar el modal y de intentar el scroll
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${mainPageScrollY}px`;
+                    document.body.style.width = '100%';
+                    document.body.style.overflowY = 'hidden'; // Asegura que no haya barra de scroll en el cuerpo
+
+                    // Oculta todos los modales y activa el modal objetivo
+                    allModals.forEach(m => m.classList.remove('active'));
+                    targetModal.classList.add('active');
+                    
+                    window.scrollTo(0, 0); // Desplaza al inicio del *modal* (no de la página principal)
+                    
+                    // Empuja un nuevo estado al historial para el modal.
+                    // IMPORTANT: The scrollY in history.pushState should be the scroll of the *main page* before freezing.
+                    history.pushState({ modal: targetModalId, scrollY: mainPageScrollY }, null, '#' + targetModalId);
+                    AOS.refresh();
+                } else {
+                    console.error('Elemento modal no encontrado:', targetModalId);
+                }
+            }
+
+            // Centralized function to close modals and restore page state
+            function closeModalAndRestore(modalToClose) {
+                if (modalToClose) {
+                    modalToClose.classList.remove('active');
+                }
+                
+                // Deshabilita temporalmente el scroll suave para un retorno inmediato a la posición
+                const originalScrollBehavior = document.documentElement.style.scrollBehavior;
+                document.documentElement.style.scrollBehavior = 'auto';
+
+                // Descongela la página principal y restaura la posición de scroll
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                document.body.style.overflowY = ''; // Restaura overflow-y
+
+                window.scrollTo(0, mainPageScrollY); // Restaura la posición de scroll guardada
+                AOS.refresh();
+
+                // Restaura el comportamiento de scroll original después de un breve momento
+                // Usar un setTimeout de 0 asegura que suceda después del ciclo de renderizado actual
+                setTimeout(() => {
+                    document.documentElement.style.scrollBehavior = originalScrollBehavior;
+                }, 0);
+            }
+
+            // Manejadores de eventos para abrir modales
+            openModalLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetModalId = link.getAttribute('href').substring(1);
+                    openModal(targetModalId, link);
+                });
+            });
+
+            // Manejadores de eventos para cerrar modales (directamente desde el botón "Volver")
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const currentModal = button.closest('.modal-project, .modal-terms');
+
+                    if (button.classList.contains('close-modal') || button.classList.contains('close-terms')) {
+                        // Para los botones "Volver", disparamos la navegación de retroceso del navegador
+                        // Esto hará que el popstate se encargue de cerrar el modal y restaurar el scroll
+                        history.back(); 
+                    } else if (button.classList.contains('close-modal-to-main')) {
+                        // Estos son enlaces de encabezado dentro de los modales (Inicio, Proyectos, etc.)
+                        // Primero, cerrar el modal y restaurar la posición de scroll del cuerpo
+                        closeModalAndRestore(currentModal);
+                        
+                        // Luego, realizar el scroll suave a la sección deseada en la página principal
+                        const targetId = button.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            // Vuelve a habilitar el scroll suave para esta navegación específica
+                            document.documentElement.style.scrollBehavior = 'smooth'; 
+                            const scrollPaddingTop = parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+                            window.scrollTo({
+                                top: targetElement.offsetTop - scrollPaddingTop,
+                                behavior: 'smooth'
+                            });
+                            // Actualiza el hash manualmente después del scroll suave para las secciones principales
+                            history.pushState(null, null, '#' + targetId);
+                        }
+                    }
+                });
+            });
+            
+            // Listener para el evento popstate (navegación del historial, ej. botón de retroceso del navegador/dispositivo)
+            window.addEventListener('popstate', (event) => {
+                const currentHash = window.location.hash;
+                const activeModal = document.querySelector('.modal-project.active, .modal-terms.active');
+                
+                // Comprueba si el estado del historial corresponde a un modal
+                const isModalState = event.state && event.state.modal;
+
+                if (isModalState) {
+                    // Estamos navegando hacia ADELANTE en el historial a un modal.
+                    // Asegúrate de que el modal correcto esté abierto y la página principal congelada.
+                    const targetModalId = event.state.modal;
+                    mainPageScrollY = event.state.scrollY; // Restaura el scrollY guardado para la página principal
+                    
+                    allModals.forEach(m => m.classList.remove('active')); // Cierra cualquier modal activo
+                    document.getElementById(targetModalId).classList.add('active'); // Abre el modal objetivo
+
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${mainPageScrollY}px`;
+                    document.body.style.width = '100%';
+                    document.body.style.overflowY = 'hidden';
+
+                    window.scrollTo(0, 0); // Desplaza al inicio del modal
+                    AOS.refresh();
+
+                } else {
+                    // Estamos navegando HACIA ATRÁS desde un modal o dentro de la página principal.
+                    if (activeModal) {
+                        // Si hay un modal activo, cerrarlo y restaurar la página principal
+                        closeModalAndRestore(activeModal);
+                    } else {
+                        // Si no hay modal activo, estamos navegando dentro de la página principal.
+                        // Asegura que el scroll sea correcto para la sección a la que se navega.
+                        // Esta sección ya debería ser suave debido a scroll-behavior: smooth inicial
+                        const targetElement = document.getElementById(currentHash.substring(1));
+                        if (targetElement) {
+                            const scrollPaddingTop = parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+                            window.scrollTo({
+                                top: targetElement.offsetTop - scrollPaddingTop,
+                                behavior: 'smooth' // Mantener suave para la navegación normal de la página
+                            });
+                        } else if (currentHash === '') {
+                            // Si no hay hash, ir al inicio de la página suavemente
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+
+
+            // Alternar FAQ
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    document.querySelectorAll('.faq-answer.active').forEach(actAns => { if (actAns !== answer) actAns.classList.remove('active'); });
+                    answer.classList.toggle('active');
+                });
+            });
+
+            // Scroll suave para enlaces de navegación de la página principal en el encabezado
+            document.querySelectorAll('#header nav a[href^="#"], #header .flex-shrink-0 a[href^="#"]').forEach(anchor => {
+                 anchor.addEventListener('click', function (e) {
+                    // Comprueba si el enlace NO es para abrir/cerrar un modal
+                    if (!this.classList.contains('open-modal') && !this.classList.contains('open-terms') &&
+                        !this.classList.contains('close-modal') && !this.classList.contains('close-terms') &&
+                        !this.classList.contains('close-modal-to-main')) {
+                        
+                        e.preventDefault();
+                        closeActiveMobileMenus(); // Cierra el menú móvil si está abierto (no afecta PC)
+
+                        // --- NUEVA LÓGICA PARA CERRAR MODALES ANTES DE NAVEGAR EN PC ---
+                        const activeModal = document.querySelector('.modal-project.active, .modal-terms.active');
+                        if (activeModal) {
+                            // Si hay un modal abierto, ciérralo y restaura la página principal
+                            closeModalAndRestore(activeModal);
+                        }
+                        // --- FIN NUEVA LÓGICA ---
+
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            // Asegura que el scroll behavior sea suave para esta navegación
+                            document.documentElement.style.scrollBehavior = 'smooth';
+                            const scrollPaddingTop = parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+                            window.scrollTo({
+                                top: targetElement.offsetTop - scrollPaddingTop,
+                                behavior: 'smooth'
+                            });
+                            // Actualiza el hash manualmente después del scroll suave para las secciones principales
+                            history.pushState(null, null, '#' + targetId); // Usa pushState para la navegación principal
+
+                            // Restaura el comportamiento de scroll original después de un breve momento
+                            // Usar un setTimeout de 0 asegura que suceda después del ciclo de renderizado actual
+                            setTimeout(() => {
+                                document.documentElement.style.scrollBehavior = ''; // Reset to default (which is smooth from CSS)
+                            }, 300); // Dale un momento para que empiece a desplazarse
+                        }
+                    }
+                });
+            });
+
+
+            // Lógica del indicador de scroll
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            function checkScrollIndicatorVisibility() {
+                if (window.innerWidth < 767 && scrollIndicator) {
+                    if (window.scrollY < 50) {
+                        scrollIndicator.style.display = 'block';
+                    } else {
+                        scrollIndicator.style.display = 'none';
+                    }
+                } else if (scrollIndicator) {
+                    scrollIndicator.style.display = 'none';
+                }
+            }
+            window.addEventListener('scroll', checkScrollIndicatorVisibility);
+            window.addEventListener('resize', checkScrollIndicatorVisibility);
+            checkScrollIndicatorVisibility();
+
+            // Script para seguimiento de conversión de WhatsApp
+            document.querySelectorAll('.whatsapp-conversion-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    gtag_report_conversion(this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
