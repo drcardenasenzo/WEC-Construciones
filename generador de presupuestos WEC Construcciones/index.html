@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Presupuestos WEC Construcciones</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
+        }
+        /* Custom modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            align-items: center; /* Centered vertically */
+            justify-content: center; /* Centered horizontally */
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border-radius: 0.5rem; /* Tailwind rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-xl */
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Styles for Sumar/Restar buttons */
+        .operation-stacked-buttons button {
+            padding: 0.1rem 0.3rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 0.2rem;
+            border: 1px solid #d1d5db;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 20px;
+        }
+        .operation-stacked-buttons button + button {
+            margin-top: 2px;
+        }
+        .operation-stacked-buttons button.active {
+            /* Changed color for active + and - buttons */
+            background-color: #FF6600; /* Orange */
+            color: #ffffff;
+            border-color: #FF6600; /* Orange */
+        }
+        .operation-stacked-buttons button.inactive {
+            background-color: #e5e7eb;
+            color: #4b5563;
+            border-color: #d1d5db;
+        }
+        .operation-stacked-buttons button:hover {
+            opacity: 0.9;
+        }
+
+        /* Monospaced font for alignment */
+        .price-align {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-6 sm:p-8 md:p-10">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6">Generador de Presupuestos WEC Construcciones</h1>
+
+        <div id="addItemSection" class="mb-8 p-4 bg-gray-50 rounded-lg">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Agregar Concepto</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label for="concept" class="block text-sm font-medium text-gray-700">Concepto</label>
+                    <input type="text" id="concept" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
+                </div>
+                <div>
+                    <label for="quantity" class="block text-sm font-medium text-gray-700">Cantidad</label>
+                    <input type="text" id="quantity" value="1" min="1" inputmode="numeric" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
+                </div>
+                <div>
+                    <label for="price" class="block text-sm font-medium text-gray-700">Precio Unitario ($)</label>
+                    <div class="mt-1 flex items-end">
+                        <input type="text" id="price" min="0" step="0.01" inputmode="numeric" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
+                        <div class="operation-stacked-buttons flex flex-col ml-1">
+                            <button id="addOperation" class="active"> + </button>
+                            <button id="subtractOperation" class="inactive"> - </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Changed color for "Agregar Ítem" button -->
+            <button id="addItem" class="w-full bg-[#FF6600] hover:bg-[#E65C00] text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                Agregar Ítem
+            </button>
+        </div>
+
+        <div id="discountSection" class="mb-8 p-4 bg-gray-50 rounded-lg">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Aplicar Descuento</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label for="discountConcept" class="block text-sm font-medium text-gray-700">Concepto del Descuento</label>
+                    <input type="text" id="discountConcept" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
+                </div>
+                <div>
+                    <label for="discountPercentage" class="block text-sm font-medium text-gray-700">Porcentaje (%)</label>
+                    <input type="text" id="discountPercentage" value="" min="0" max="100" inputmode="numeric" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border">
+                </div>
+            </div>
+            <!-- Changed color for "Aplicar Descuento" button -->
+            <button id="applyDiscount" class="w-full bg-[#FF6600] hover:bg-[#E65C00] text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                Aplicar Descuento
+            </button>
+        </div>
+
+        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Trabajo a realizar: (Opcional)</h2>
+            <textarea id="tasksToDo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2 border" rows="4" placeholder="Ingrese el trabajo a realizar aquí..."></textarea>
+            <div id="tasksPreview" class="mt-1 p-2 bg-white rounded-md border border-gray-300 hidden whitespace-pre-wrap"></div>
+            <div class="mt-4 flex space-x-2">
+                <!-- Changed color for "Guardar" button -->
+                <button id="saveTasks" class="w-full bg-[#FF6600] hover:bg-[#E65C00] text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                    Guardar
+                </button>
+                <!-- Changed color for "Editar" button to orange -->
+                <button id="editTasks" class="w-full bg-[#FF6600] hover:bg-[#E65C00] text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out hidden">
+                    Editar
+                </button>
+            </div>
+        </div>
+
+        <div class="mb-8 p-4 bg-gray-50 rounded-lg">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Forma de Pago</h2>
+            <div>
+                <label for="paymentMethod" class="block text-sm font-medium text-gray-700">Seleccione la forma de pago:</label>
+                <!-- Changed focus colors for "paymentMethod" select to orange -->
+                <select id="paymentMethod" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FF6600] focus:ring-[#FF6600] p-2 border">
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Ítems del Presupuesto</h2>
+            <div class="overflow-x-auto rounded-lg shadow">
+                <table id="itemsTable" class="min-w-full divide-y divide-gray-200 table-fixed">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="w-[40%] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Concepto</th>
+                            <th scope="col" class="w-[15%] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cantidad</th>
+                            <th scope="col" class="w-[15%] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio Unitario</th>
+                            <th scope="col" class="w-[20%] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subtotal</th>
+                            <th scope="col" class="w-[10%] px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Items will be added here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right mt-4 p-4 bg-gray-50 rounded-lg">
+                <p class="text-lg font-bold text-gray-800">Total: <span id="totalAmount">$0,00</span></p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button id="downloadPdf" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md shadow-md transition duration-300 ease-in-out text-lg">
+                Descargar Presupuesto (PDF)
+            </button>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modalMessage" class="text-lg text-gray-800"></p>
+            <button id="modalCloseButton" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Get references to HTML elements
+        const conceptInput = document.getElementById('concept');
+        const quantityInput = document.getElementById('quantity');
+        const priceInput = document.getElementById('price');
+        const addItemButton = document.getElementById('addItem');
+        const itemsTableBody = document.querySelector('#itemsTable tbody');
+        const totalAmountSpan = document.getElementById('totalAmount');
+        const downloadPdfButton = document.getElementById('downloadPdf');
+        const paymentMethodSelect = document.getElementById('paymentMethod');
+        const discountConceptInput = document.getElementById('discountConcept');
+        const discountPercentageInput = document.getElementById('discountPercentage');
+        const applyDiscountButton = document.getElementById('applyDiscount'); 
+        const addItemSection = document.getElementById('addItemSection');
+        const discountSection = document.getElementById('discountSection');
+        
+        // Referencias a elementos de "Trabajo a realizar"
+        const tasksToDoTextarea = document.getElementById('tasksToDo');
+        const tasksPreviewDiv = document.getElementById('tasksPreview'); // Nuevo elemento para la preview
+        const saveTasksButton = document.getElementById('saveTasks');
+        const editTasksButton = document.getElementById('editTasks');
+
+        const addOperationButton = document.getElementById('addOperation');
+        const subtractOperationButton = document.getElementById('subtractOperation');
+
+        const modal = document.getElementById("myModal");
+        const modalMessage = document.getElementById("modalMessage");
+        const closeButton = document.querySelector(".close-button");
+        const modalCloseButton = document.getElementById("modalCloseButton");
+
+        // Initialize variables for items and editing
+        let items = [];
+        let editingIndex = -1;
+        let currentItemOperation = 'add'; // 'add' or 'subtract'
+        let savedTasksText = ''; // Variable para almacenar el texto de "Trabajo a realizar" que irá al PDF
+
+        // Function to show a modal with a given message
+        function showModal(message) {
+            modalMessage.textContent = message;
+            modal.style.display = "flex";
+        }
+
+        // Event listeners for closing the modal
+        closeButton.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        modalCloseButton.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to format currency for HTML display with a non-breaking space for alignment
+        function formatCurrencyForHtmlDisplay(value) {
+            const formattedNum = Math.abs(value).toLocaleString('es-AR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            const negativeSignPlaceholder = '\u2007'; // Figure space for alignment
+
+            if (value < 0) {
+                return `-$${formattedNum}`;
+            } else {
+                return `${negativeSignPlaceholder}$${formattedNum}`;
+            }
+        }
+
+        // Function to format currency for PDF display with consistent "$" alignment
+        function formatCurrencyForPdfDisplay(value) {
+            const formattedNum = Math.abs(value).toLocaleString('es-AR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+            // Add a leading space for positive values to align with the negative sign for negative values.
+            if (value < 0) {
+                return `-$${formattedNum}`;
+            } else {
+                return ` $${formattedNum}`; 
+            }
+        }
+
+        // Function to capitalize the first letter of a string
+        function capitalizeFirstLetter(string) {
+            if (!string) return '';
+            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+        }
+
+        // Function to update the visual state of the operation buttons
+        function updateOperationButtons() {
+            if (currentItemOperation === 'add') {
+                addOperationButton.classList.add('active');
+                addOperationButton.classList.remove('inactive');
+                subtractOperationButton.classList.add('inactive');
+                subtractOperationButton.classList.remove('active');
+            } else {
+                subtractOperationButton.classList.add('active');
+                subtractOperationButton.classList.remove('inactive');
+                addOperationButton.classList.add('inactive');
+                addOperationButton.classList.remove('active');
+            }
+        }
+
+        // Event listeners for operation buttons
+        addOperationButton.addEventListener('click', () => {
+            currentItemOperation = 'add';
+            updateOperationButtons();
+        });
+
+        subtractOperationButton.addEventListener('click', () => {
+            currentItemOperation = 'subtract';
+            updateOperationButtons();
+        });
+
+        // Event listener for adding/editing an item
+        addItemButton.addEventListener('click', () => {
+            const concept = capitalizeFirstLetter(conceptInput.value.trim());
+            const quantity = parseFloat(quantityInput.value.replace(',', '.'));
+            let price = parseFloat(priceInput.value.replace(',', '.'));
+
+            // Input validation
+            if (!concept) {
+                showModal('Por favor, ingrese un concepto.');
+                return;
+            }
+            if (isNaN(quantity) || quantity <= 0) {
+                showModal('Por favor, ingrese una cantidad válida mayor que 0.');
+                return;
+            }
+            if (isNaN(price) || price < 0) {
+                showModal('Por favor, ingrese un precio unitario válido.');
+                return;
+            }
+
+            let subtotal = quantity * price;
+            if (currentItemOperation === 'subtract') {
+                subtotal = -subtotal;
+            }
+
+            // Remove fee and discount items before adding/editing
+            removeFeeItem();
+            removeDiscountItem();
+
+            // Handle editing or adding new item
+            if (editingIndex > -1) {
+                items[editingIndex] = { concept, quantity, price, subtotal, isFee: false, isDiscount: false, operationType: currentItemOperation };
+                editingIndex = -1;
+                addItemButton.textContent = 'Agregar Ítem';
+            } else {
+                items.push({ concept, quantity, price, subtotal, isFee: false, isDiscount: false, operationType: currentItemOperation });
+            }
+            
+            // Reapply fees and discounts (this will call renderItems internally)
+            applyExistingDiscount(); 
+            clearInputs();
+        });
+
+        // Function to clear input fields
+        function clearInputs() {
+            conceptInput.value = '';
+            quantityInput.value = '1';
+            priceInput.value = '';
+            conceptInput.focus();
+            currentItemOperation = 'add';
+            updateOperationButtons();
+        }
+
+        // Function to render items in the table
+        function renderItems() {
+            itemsTableBody.innerHTML = '';
+            let total = 0;
+
+            items.forEach((item, index) => {
+                const row = itemsTableBody.insertRow();
+                row.classList.add('hover:bg-gray-100');
+                
+                let quantityDisplay = item.quantity.toString();
+                let priceDisplay; 
+
+                if (item.isFee) {
+                    quantityDisplay = '7.61%';
+                    priceDisplay = ''; // No unit price for fees
+                } else if (item.isDiscount) {
+                    quantityDisplay = `${Math.abs(item.quantity).toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
+                    priceDisplay = ''; // No unit price for discounts
+                } else {
+                    // Check if the item's operation type is 'subtract' to determine price display
+                    if (item.operationType === 'subtract') {
+                        priceDisplay = formatCurrencyForHtmlDisplay(-item.price); // Display negative price
+                    } else {
+                        priceDisplay = formatCurrencyForHtmlDisplay(item.price); // Display positive price
+                    }
+                }
+
+                let subtotalDisplay = formatCurrencyForHtmlDisplay(item.subtotal);
+
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${item.concept}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${quantityDisplay}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 price-align">${priceDisplay}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 price-align">${subtotalDisplay}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        ${!item.isFee ? `
+                            <button class="text-indigo-600 hover:text-indigo-900 edit-item" data-index="${index}" data-type="${item.isDiscount ? 'discount' : 'item'}">
+                                Editar
+                            </button>
+                            <button class="text-red-600 hover:text-red-900 ml-4 delete-item" data-index="${index}" data-type="${item.isDiscount ? 'discount' : 'item'}">Eliminar</button>
+                        ` : ''}
+                    </td>
+                `;
+                total += item.subtotal;
+            });
+
+            totalAmountSpan.innerHTML = formatCurrencyForHtmlDisplay(total);
+
+            // Add event listeners for delete buttons
+            document.querySelectorAll('.delete-item').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = parseInt(event.target.dataset.index);
+                    const type = event.target.dataset.type;
+                    if (type === 'item') {
+                        items.splice(index, 1);
+                        applyExistingDiscount(); // Recalculate everything after a regular item is deleted.
+                    } else if (type === 'discount') {
+                        deleteDiscountItem(index); // This function will now call applyExistingDiscount
+                    }
+                });
+            });
+
+            document.querySelectorAll('.edit-item').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const index = parseInt(event.currentTarget.dataset.index);
+                    const type = event.currentTarget.dataset.type;
+                    if (type === 'item') {
+                        editItem(index);
+                    } else if (type === 'discount') {
+                        editDiscountItem(index);
+                    }
+                });
+            });
+        }
+        
+        function editItem(index) {
+            const itemToEdit = items[index];
+            conceptInput.value = itemToEdit.concept;
+            quantityInput.value = itemToEdit.quantity;
+            priceInput.value = itemToEdit.price;
+            currentItemOperation = itemToEdit.operationType || 'add';
+            updateOperationButtons();
+
+            editingIndex = index;
+            addItemButton.textContent = 'Guardar Cambios';
+            addItemSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function removeFeeItem() {
+            items = items.filter(item => !item.isFee);
+        }
+
+        function removeDiscountItem() {
+            items = items.filter(item => !item.isDiscount);
+        }
+
+        // Central function to apply/reapply discount and then fee
+        function applyExistingDiscount() {
+            // 1. Remove any existing discount item
+            items = items.filter(item => !item.isDiscount);
+
+            // 2. Calculate the base total for discount application (sum of non-fee items)
+            const baseTotalForDiscount = items.reduce((sum, item) => sum + (item.isFee ? 0 : item.subtotal), 0);
+
+            // 3. If there's an active discount percentage, calculate and add the discount item
+            if (lastDiscount.percentage > 0) {
+                const discountAmount = baseTotalForDiscount * (lastDiscount.percentage / 100);
+                items.push({
+                    concept: lastDiscount.concept,
+                    quantity: lastDiscount.percentage,
+                    price: 0, // No unit price for discount
+                    subtotal: -discountAmount, // Discount is a negative value
+                    isFee: false,
+                    isDiscount: true,
+                    operationType: 'subtract'
+                });
+                // Store the index of the newly added discount for future edits
+                lastDiscount.index = items.findIndex(item => item.isDiscount && item.concept === lastDiscount.concept && item.quantity === lastDiscount.percentage);
+            } else {
+                lastDiscount.index = -1; // Reset index if no discount applied
+            }
+
+            // 4. After discount is handled (added or removed), recalculate the payment fee.
+            // This call will then also trigger renderItems().
+            applyPaymentMethodFee();
+        }
+
+
+        // Function to apply payment method fee (7.61% for card payments)
+        function applyPaymentMethodFee() {
+            const selectedMethod = paymentMethodSelect.value;
+            const feePercentage = 0.0761;
+
+            // 1. Remove any existing fee item to avoid duplicates or incorrect recalculations
+            items = items.filter(item => !item.isFee);
+
+            if (selectedMethod === 'Tarjeta de Crédito' || selectedMethod === 'Tarjeta de Débito') {
+                // Calculate the total for fee calculation.
+                // This total should now correctly include the regular items and the applied discount (which is already in the `items` array).
+                let totalForFeeCalculation = items.reduce((sum, item) => sum + (item.isFee ? 0 : item.subtotal), 0); // Sum everything except fees (which were just removed)
+                
+                const feeAmount = totalForFeeCalculation * feePercentage;
+                items.push({ 
+                    concept: 'Costo de la transacción con tarjeta', 
+                    quantity: 7.61, // Display as percentage
+                    price: 0, // No unit price for fee
+                    subtotal: feeAmount, 
+                    isFee: true,
+                    isDiscount: false,
+                    operationType: 'add'
+                });
+            }
+            // Finally, render all items
+            renderItems();
+        }
+
+        let lastDiscount = {
+            concept: '',
+            percentage: 0,
+            index: -1
+        };
+
+        applyDiscountButton.addEventListener('click', () => {
+            const discountConcept = capitalizeFirstLetter(discountConceptInput.value.trim());
+            const discountPercentage = parseFloat(discountPercentageInput.value.replace(',', '.'));
+
+            if (!discountConcept) {
+                showModal('Por favor, ingrese un concepto para el descuento.');
+                return;
+            }
+            if (isNaN(discountPercentage) || discountPercentage < 0 || discountPercentage > 100) {
+                showModal('Por favor, ingrese un porcentaje de descuento válido entre 0 y 100.');
+                return;
+            }
+
+            // Update lastDiscount object before calling applyExistingDiscount
+            if (lastDiscount.index !== -1 && items[lastDiscount.index] && items[lastDiscount.index].isDiscount) {
+                lastDiscount.percentage = discountPercentage;
+                lastDiscount.concept = discountConcept; 
+            } else {
+                lastDiscount.concept = discountConcept;
+                lastDiscount.percentage = discountPercentage;
+            }
+            
+            applyExistingDiscount(); // This will now always handle removal/addition of discount and fee, and rendering.
+            resetDiscountForm();
+        });
+
+
+        function editDiscountItem(index) {
+            const itemToEdit = items[index];
+            discountConceptInput.value = itemToEdit.concept;
+            discountPercentageInput.value = itemToEdit.quantity;
+            lastDiscount.index = index;
+            applyDiscountButton.textContent = 'Guardar Cambios Descuento';
+            discountSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteDiscountItem(index) {
+            items.splice(index, 1);
+            lastDiscount = { concept: '', percentage: 0, index: -1 }; // Reset last discount
+            resetDiscountForm(); // Clears form
+            applyExistingDiscount(); // Recalculate all (discount and fee, and render)
+        }
+
+        function resetDiscountForm() {
+            discountConceptInput.value = '';
+            discountPercentageInput.value = '';
+            applyDiscountButton.textContent = 'Aplicar Descuento';
+            lastDiscount.index = -1;
+        }
+
+        paymentMethodSelect.addEventListener('change', applyExistingDiscount); // Call applyExistingDiscount to re-evaluate everything
+
+        // Funciones para la sección "Trabajo a realizar"
+        function updateTasksUI() {
+            if (savedTasksText) {
+                tasksToDoTextarea.value = savedTasksText; // Asegura que el textarea siempre tenga el valor guardado
+                tasksToDoTextarea.style.display = 'none'; // Oculta el textarea
+                tasksPreviewDiv.textContent = savedTasksText;
+                tasksPreviewDiv.classList.remove('hidden'); // Muestra la preview
+                saveTasksButton.classList.add('hidden');
+                editTasksButton.classList.remove('hidden');
+            } else {
+                tasksToDoTextarea.value = '';
+                tasksToDoTextarea.style.display = 'block'; // Muestra el textarea
+                tasksPreviewDiv.classList.add('hidden'); // Oculta la preview
+                saveTasksButton.classList.remove('hidden');
+                editTasksButton.classList.add('hidden');
+            }
+        }
+
+        saveTasksButton.addEventListener('click', () => {
+            savedTasksText = tasksToDoTextarea.value.trim();
+            updateTasksUI();
+            if (savedTasksText === '') {
+                // No mostrar modal si está vacío, simplemente no se guardará en el PDF.
+            }
+        });
+
+        editTasksButton.addEventListener('click', () => {
+            tasksToDoTextarea.style.display = 'block'; // Muestra el textarea
+            tasksPreviewDiv.classList.add('hidden'); // Oculta la preview
+            saveTasksButton.classList.remove('hidden');
+            editTasksButton.classList.add('hidden');
+            tasksToDoTextarea.focus();
+        });
+        
+        // Inicializar el estado de la UI de "Trabajo a realizar" al cargar
+        updateTasksUI();
+
+        function getNextQuoteNumber() {
+            const lastQuoteData = JSON.parse(localStorage.getItem('lastQuoteData')) || {};
+            let lastNumber = lastQuoteData.number || 233;
+            let lastYear = lastQuoteData.year || new Date().getFullYear();
+
+            const currentYear = new Date().getFullYear();
+
+            if (currentYear !== lastYear) {
+                lastNumber = 1;
+                lastYear = currentYear;
+            } else {
+                lastNumber++;
+            }
+
+            localStorage.setItem('lastQuoteData', JSON.stringify({ number: lastNumber, year: lastYear }));
+            return `${lastNumber}/${String(currentYear).slice(-2)}`;
+        }
+
+        downloadPdfButton.addEventListener('click', () => {
+            if (items.length === 0) {
+                showModal('No hay ítems para generar el presupuesto. Por favor, agregue algunos.');
+                return;
+            }
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(24);
+                doc.text("WEC Construcciones", 15, 20);
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                const contactInfoX = 20;
+                doc.text("Cel: 1151063817", contactInfoX, 30);
+                doc.text("Email: info@wecconstrucciones.com.ar", contactInfoX, 35);
+                doc.text("www.wecconstrucciones.com.ar", contactInfoX, 40);
+
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(18);
+                const titleRightAlignX = doc.internal.pageSize.width - 20;
+                doc.text("PRESUPUESTO", titleRightAlignX, 40, { align: 'right' });
+
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                const today = new Date();
+                const date = today.toLocaleDateString('es-AR');
+                const time = today.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+                const quoteNumber = getNextQuoteNumber();
+
+                const widestStringWidth = Math.max(
+                    doc.getStringUnitWidth(`Fecha: ${date}`),
+                    doc.getStringUnitWidth(`Hora: ${time}`),
+                    doc.getStringUnitWidth(`N°: ${quoteNumber}`)
+                ) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+
+                const infoLinesStartX = doc.internal.pageSize.width - 20 - widestStringWidth;
+
+                let currentInfoY = 47;
+                doc.text(`Fecha: ${date}`, infoLinesStartX, currentInfoY, { align: 'left' });
+                currentInfoY += 5;
+                doc.text(`Hora: ${time}`, infoLinesStartX, currentInfoY, { align: 'left' });
+                currentInfoY += 5;
+                doc.text(`N°: ${quoteNumber}`, infoLinesStartX, currentInfoY, { align: 'left' });
+
+                const startY = 80;
+                const colConceptLeftX = 20;
+                const colCantidadLeftX = 92; 
+                const colPrecioUnitarioLeftX = 118; 
+                const colSubtotalLeftX = 150;     
+                const col_end_x = 190;
+                const cellHeight = 7;
+                const cellPadding = 2;
+                // Adjusted textLeftOffset to move content 2 units to the right relative to cellPadding
+                const textLeftOffset = -2; // Used to shift text LEFT from cellPadding. A positive value shifts right.
+                                           // To move 2 units right, we ADD 2 to the X position. 
+                                           // So, for `X + padding - offset`, it means `X + padding + 2`
+                                           // This means we need `textLeftOffset = -2` to achieve `X + padding - (-2)` => `X + padding + 2`
+
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(10);
+                doc.setFillColor(230, 230, 230);
+                doc.rect(colConceptLeftX, startY, col_end_x - colConceptLeftX, cellHeight, 'F');
+                doc.setDrawColor(150, 150, 150);
+                doc.setLineWidth(0.2);
+                doc.rect(colConceptLeftX, startY, col_end_x - colConceptLeftX, cellHeight, 'S');
+
+                // Adjust title text positions to align with content padding
+                doc.text("Concepto", colConceptLeftX + cellPadding, startY + 5);
+                doc.text("Cantidad", colCantidadLeftX + cellPadding + textLeftOffset, startY + 5); // Applied offset to header
+                doc.text("P. Unitario", colPrecioUnitarioLeftX + cellPadding + textLeftOffset, startY + 5); // Applied offset to header
+                doc.text("Subtotal", colSubtotalLeftX + cellPadding + textLeftOffset, startY + 5); // Applied offset to header
+
+                doc.line(colCantidadLeftX - 2, startY, colCantidadLeftX - 2, startY + cellHeight);
+                doc.line(colPrecioUnitarioLeftX - 2, startY, colPrecioUnitarioLeftX - 2, startY + cellHeight);
+                doc.line(colSubtotalLeftX - 2, startY, colSubtotalLeftX - 2, startY + cellHeight);
+
+                doc.setFont('helvetica', 'normal');
+                let currentY = startY + cellHeight;
+                let total = 0;
+
+                items.forEach(item => {
+                    doc.setDrawColor(150, 150, 150);
+                    doc.setLineWidth(0.2);
+
+                    doc.line(colConceptLeftX, currentY, col_end_x, currentY);
+                    currentY += cellHeight;
+                    
+                    let pdfQuantityDisplay = item.quantity.toString();
+                    let pdfPriceDisplay = '';
+                    let pdfSubtotalDisplay = ''; 
+
+                    if (item.isFee) {
+                        pdfQuantityDisplay = '7.61%';
+                        pdfPriceDisplay = ''; // No unit price for fees
+                    } else if (item.isDiscount) {
+                        pdfQuantityDisplay = `${Math.abs(item.quantity).toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}%`;
+                        pdfPriceDisplay = ''; // No unit price for discounts
+                    } else {
+                         // Ensure negative sign is passed to formatCurrencyForPdfDisplay for Price Unitario
+                         const effectivePrice = item.operationType === 'subtract' ? -item.price : item.price;
+                         pdfPriceDisplay = formatCurrencyForPdfDisplay(effectivePrice);
+                    }
+                    
+                    pdfSubtotalDisplay = formatCurrencyForPdfDisplay(item.subtotal);
+
+                    doc.text(item.concept, colConceptLeftX + cellPadding, currentY - 2);
+                    // Applying the textLeftOffset to shift content left within its cell
+                    doc.text(pdfQuantityDisplay, colCantidadLeftX + cellPadding + textLeftOffset, currentY - 2);
+                    doc.text(pdfPriceDisplay, colPrecioUnitarioLeftX + cellPadding + textLeftOffset, currentY - 2);
+                    doc.text(pdfSubtotalDisplay, colSubtotalLeftX + cellPadding + textLeftOffset, currentY - 2);
+                    
+                    total += item.subtotal;
+
+                    doc.line(colConceptLeftX, currentY - cellHeight, colConceptLeftX, currentY);
+                    doc.line(colCantidadLeftX - 2, currentY - cellHeight, colCantidadLeftX - 2, currentY);
+                    doc.line(colPrecioUnitarioLeftX - 2, currentY - cellHeight, colPrecioUnitarioLeftX - 2, currentY);
+                    doc.line(colSubtotalLeftX - 2, currentY - cellHeight, colSubtotalLeftX - 2, currentY);
+                    doc.line(col_end_x, currentY - cellHeight, col_end_x, currentY);
+                });
+
+                doc.line(colConceptLeftX, currentY, col_end_x, currentY);
+
+                const selectedPaymentMethod = paymentMethodSelect.value;
+                currentY += 10;
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.text(`Forma de pago: ${selectedPaymentMethod}`, 20, currentY);
+
+                currentY += 10;
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(12);
+                const totalAmountX = col_end_x - cellPadding;
+                const totalLabelX = totalAmountX - 30; 
+                doc.text("TOTAL:", totalLabelX, currentY, { align: 'right' });
+                
+                let pdfTotalDisplay = formatCurrencyForPdfDisplay(total);
+                doc.text(pdfTotalDisplay, totalAmountX, currentY, { align: 'right' });
+
+                // Add "Trabajo a realizar" section if savedTasksText is not empty
+                if (savedTasksText) {
+                    currentY += 15; // Add some space before the new section
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(10);
+                    doc.text("Trabajo a realizar:", 20, currentY);
+                    currentY += 5; // Space after title
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(9);
+                    // Split the text into lines and add them
+                    const splitText = doc.splitTextToSize(savedTasksText, doc.internal.pageSize.width - 40); // 20 units padding on each side
+                    doc.text(splitText, 20, currentY);
+                    currentY += (splitText.length * 4) + 5; // Adjust Y based on number of lines and add extra space
+                }
+
+
+                currentY += 5; // Add some extra space before the note
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(9);
+                doc.text("Nota: el presente presupuesto tiene una vigencia de 30 días corridos, luego puede sufrir modificaciones sin previo aviso.", 20, currentY);
+
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(8);
+                    const footerY = doc.internal.pageSize.height - 10;
+                    doc.text(`No tiene valor fiscal`, doc.internal.pageSize.width / 2, footerY, { align: 'center' });
+                    doc.text(`Página ${i} de ${pageCount}`, doc.internal.pageSize.width - 20, footerY, { align: 'right' });
+                }
+
+                const fileNameDate = today.toLocaleDateString('en-CA').replace(/-/g, '');
+                const fileNameTime = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }).replace(/:/g, '');
+                const fileNameQuoteNumber = quoteNumber.replace(/\//g, '-');
+
+                doc.save(`Presupuesto_${fileNameDate}_${fileNameTime}_N${fileNameQuoteNumber}.pdf`);
+            } catch (error) {
+                console.error("Error generating or downloading PDF:", error);
+                showModal('Ocurrió un error al intentar descargar el presupuesto. Por favor, inténtelo de nuevo. Detalles: ' + error.message);
+            }
+        });
+
+        renderItems();
+        applyExistingDiscount(); // Call this once on initial load to setup correctly
+        updateOperationButtons();
+    </script>
+</body>
+</html>
