@@ -8,6 +8,11 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'content'))
 from articles import ARTICLES
 from faq import FAQ
+from related import RELATIONS
+assert set(RELATIONS)==set(range(50))
+assert set(j for related in RELATIONS.values() for j in related)==set(range(50))
+for i, related in RELATIONS.items():
+ assert len(related)==len(set(related))==3 and i not in related
 assert set(FAQ)=={a['slug'] for a in ARTICLES}
 BASE=json.loads((ROOT/'site_config.json').read_text())['base_url'].rstrip('/')
 errors=[]
