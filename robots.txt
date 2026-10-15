@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://drcardenasenzo.github.io/WEC-Construciones/sitemap.xml

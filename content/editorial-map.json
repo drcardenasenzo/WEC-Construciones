@@ -1,0 +1,552 @@
+[
+  {
+    "url": "guias/pozo-ciego-desmoronado/",
+    "intencion": "Se me desmoronó el pozo ciego: qué hacer",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "piso-hundido-cerca-pozo",
+      "tapa-pozo-ciego-rota",
+      "reparar-o-hacer-pozo-nuevo"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-se-llena-rapido/",
+    "intencion": "El pozo ciego se llena muy rápido: posibles causas",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-se-llena-despues-del-desagote",
+      "pozo-ciego-no-absorbe",
+      "agregar-bano-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/pozo-se-llena-despues-del-desagote/",
+    "intencion": "Desagoté el pozo y se volvió a llenar: qué revisar",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-se-llena-rapido",
+      "pozo-ciego-rebalsa-cuando-llueve",
+      "terreno-no-absorbe-efluentes"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-no-absorbe/",
+    "intencion": "El pozo ciego dejó de absorber: ¿se puede recuperar?",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "terreno-no-absorbe-efluentes",
+      "camara-septica-y-pozo-diferencias",
+      "reparar-o-hacer-pozo-nuevo"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-rebalsa-cuando-llueve/",
+    "intencion": "El pozo ciego rebalsa cuando llueve: cómo encarar el problema",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "separar-pluviales-pozo-ciego",
+      "napa-alta-pozo-biodigestor",
+      "pozo-se-llena-despues-del-desagote"
+    ]
+  },
+  {
+    "url": "guias/olor-pozo-ciego-patio/",
+    "intencion": "Olor a pozo ciego en el patio: qué puede estar pasando",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "vuelve-agua-inodoro-pozo-ciego",
+      "camara-inspeccion-camara-septica",
+      "biodigestor-mal-olor"
+    ]
+  },
+  {
+    "url": "guias/vuelve-agua-inodoro-pozo-ciego/",
+    "intencion": "Vuelve agua por el inodoro: ¿el problema es el pozo?",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-o-caneria-tapada",
+      "pozo-ciego-se-llena-rapido",
+      "camara-inspeccion-camara-septica"
+    ]
+  },
+  {
+    "url": "guias/piso-hundido-cerca-pozo/",
+    "intencion": "Se hundió el piso cerca del pozo ciego: qué evaluar",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-desmoronado",
+      "tapa-pozo-ciego-rota",
+      "construir-sobre-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/tapa-pozo-ciego-rota/",
+    "intencion": "Tapa de pozo ciego rota: qué revisar antes de reemplazarla",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "piso-hundido-cerca-pozo",
+      "construir-sobre-pozo-ciego",
+      "pozo-ciego-desmoronado"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-o-caneria-tapada/",
+    "intencion": "Pozo lleno o cañería tapada: cómo orientar la consulta",
+    "grupo": "Problemas",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "vuelve-agua-inodoro-pozo-ciego",
+      "pozo-se-llena-despues-del-desagote",
+      "raices-canerias-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/cuanto-cuesta-pozo-ciego/",
+    "intencion": "¿Cuánto cuesta hacer un pozo ciego? Qué define el precio",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "comparar-presupuestos-pozo-ciego",
+      "materiales-pozo-ciego",
+      "retiro-tierra-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/comparar-presupuestos-pozo-ciego/",
+    "intencion": "Cómo comparar presupuestos de pozos ciegos",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "cuanto-cuesta-pozo-ciego",
+      "reparar-o-hacer-pozo-nuevo",
+      "precio-instalacion-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/cuanto-tarda-hacer-pozo-ciego/",
+    "intencion": "¿Cuánto tarda hacer un pozo ciego? Etapas y condiciones",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "materiales-pozo-ciego",
+      "retiro-tierra-pozo-ciego",
+      "pozo-ciego-sin-acceso-maquina"
+    ]
+  },
+  {
+    "url": "guias/materiales-pozo-ciego/",
+    "intencion": "Materiales para un pozo ciego: cómo organizar la compra",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "cuanto-cuesta-pozo-ciego",
+      "comparar-presupuestos-pozo-ciego",
+      "cuanto-tarda-hacer-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/retiro-tierra-pozo-ciego/",
+    "intencion": "Retiro de tierra al hacer un pozo: qué coordinar",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "pozo-ciego-sin-acceso-maquina",
+      "cuanto-cuesta-pozo-ciego",
+      "cuanto-tarda-hacer-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-sin-acceso-maquina/",
+    "intencion": "¿Se puede hacer un pozo sin acceso para una máquina?",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "retiro-tierra-pozo-ciego",
+      "ubicacion-pozo-ciego-terreno",
+      "cuanto-tarda-hacer-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/profundidad-pozo-ciego/",
+    "intencion": "¿Qué profundidad debe tener un pozo ciego?",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "napa-alta-pozo-biodigestor",
+      "terreno-no-absorbe-efluentes",
+      "ubicacion-pozo-ciego-terreno"
+    ]
+  },
+  {
+    "url": "guias/ubicacion-pozo-ciego-terreno/",
+    "intencion": "Dónde ubicar un pozo ciego: qué se evalúa en el terreno",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "profundidad-pozo-ciego",
+      "casa-sin-cloacas",
+      "localizar-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/reparar-o-hacer-pozo-nuevo/",
+    "intencion": "¿Reparar el pozo ciego o hacer uno nuevo?",
+    "grupo": "Precios y obra",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-no-absorbe",
+      "cuanto-cuesta-pozo-ciego",
+      "reemplazar-pozo-por-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/casa-sin-cloacas/",
+    "intencion": "Casa sin cloacas: qué evaluar antes de construir",
+    "grupo": "Precios y obra",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "camara-septica-y-pozo-diferencias",
+      "biodigestor-o-camara-septica",
+      "llego-cloaca-que-hacer-pozo"
+    ]
+  },
+  {
+    "url": "guias/camara-septica-y-pozo-diferencias/",
+    "intencion": "Cámara séptica y pozo ciego: qué función tiene cada uno",
+    "grupo": "Sistemas sanitarios",
+    "servicio": "camaras-septicas",
+    "relacionados": [
+      "camara-inspeccion-camara-septica",
+      "pozo-ciego-pozo-absorbente-pozo-negro",
+      "biodigestor-o-camara-septica"
+    ]
+  },
+  {
+    "url": "guias/camara-inspeccion-camara-septica/",
+    "intencion": "Cámara de inspección y cámara séptica: no cumplen lo mismo",
+    "grupo": "Sistemas sanitarios",
+    "servicio": "camaras-septicas",
+    "relacionados": [
+      "camara-septica-y-pozo-diferencias",
+      "agregar-bano-pozo-ciego",
+      "separar-pluviales-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/pozo-ciego-pozo-absorbente-pozo-negro/",
+    "intencion": "Pozo ciego, pozo negro y pozo absorbente: cómo pedir el trabajo",
+    "grupo": "Sistemas sanitarios",
+    "servicio": "pozos-ciegos",
+    "relacionados": [
+      "camara-septica-y-pozo-diferencias",
+      "casa-sin-cloacas",
+      "como-funciona-biodigestor-domiciliario"
+    ]
+  },
+  {
+    "url": "guias/terreno-no-absorbe-efluentes/",
+    "intencion": "Terreno que no absorbe: cómo afecta al sistema sanitario",
+    "grupo": "Sistemas sanitarios",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-no-absorbe",
+      "napa-alta-pozo-biodigestor",
+      "salida-efluente-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/napa-alta-pozo-biodigestor/",
+    "intencion": "Napa alta: qué evaluar antes de hacer un pozo o biodigestor",
+    "grupo": "Sistemas sanitarios",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "terreno-no-absorbe-efluentes",
+      "profundidad-pozo-ciego",
+      "salida-efluente-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/precio-instalacion-biodigestor/",
+    "intencion": "¿Cuánto cuesta instalar un biodigestor completo?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "comprar-biodigestor-antes-instalar",
+      "salida-efluente-biodigestor",
+      "capacidad-biodigestor-vivienda"
+    ]
+  },
+  {
+    "url": "guias/reemplazar-pozo-por-biodigestor/",
+    "intencion": "¿Se puede reemplazar un pozo ciego por un biodigestor?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "reparar-o-hacer-pozo-nuevo",
+      "biodigestor-o-camara-septica",
+      "anular-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/biodigestor-o-camara-septica/",
+    "intencion": "Biodigestor o cámara séptica: qué comparar antes de elegir",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "camara-septica-y-pozo-diferencias",
+      "capacidad-biodigestor-vivienda",
+      "precio-instalacion-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/capacidad-biodigestor-vivienda/",
+    "intencion": "¿Qué capacidad de biodigestor necesita una vivienda?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "agregar-bano-pozo-ciego",
+      "casa-fin-semana-sistema-sanitario",
+      "comprar-biodigestor-antes-instalar"
+    ]
+  },
+  {
+    "url": "guias/como-funciona-biodigestor-domiciliario/",
+    "intencion": "Cómo funciona un biodigestor domiciliario",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "salida-efluente-biodigestor",
+      "biodigestor-autolimpiable",
+      "biodigestor-o-camara-septica"
+    ]
+  },
+  {
+    "url": "guias/salida-efluente-biodigestor/",
+    "intencion": "¿A dónde va el agua que sale de un biodigestor?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "terreno-no-absorbe-efluentes",
+      "napa-alta-pozo-biodigestor",
+      "biodigestor-rebalsa"
+    ]
+  },
+  {
+    "url": "guias/mantenimiento-biodigestor/",
+    "intencion": "Mantenimiento del biodigestor: qué hay que prever",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "biodigestor-autolimpiable",
+      "puesta-en-marcha-biodigestor",
+      "productos-limpieza-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/biodigestor-autolimpiable/",
+    "intencion": "Biodigestor autolimpiable: qué significa y qué no",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "mantenimiento-biodigestor",
+      "comprar-biodigestor-antes-instalar",
+      "como-funciona-biodigestor-domiciliario"
+    ]
+  },
+  {
+    "url": "guias/biodigestor-mal-olor/",
+    "intencion": "El biodigestor tiene mal olor: qué revisar",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "biodigestor-rebalsa",
+      "mantenimiento-biodigestor",
+      "productos-limpieza-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/biodigestor-rebalsa/",
+    "intencion": "El biodigestor rebalsa: entrada, equipo y salida",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "salida-efluente-biodigestor",
+      "biodigestor-mal-olor",
+      "lavarropas-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/productos-limpieza-biodigestor/",
+    "intencion": "Productos de limpieza y biodigestor: qué consultar",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "mantenimiento-biodigestor",
+      "biodigestor-mal-olor",
+      "lavarropas-biodigestor"
+    ]
+  },
+  {
+    "url": "guias/lavarropas-biodigestor/",
+    "intencion": "¿Se puede conectar el lavarropas a un biodigestor?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "capacidad-biodigestor-vivienda",
+      "productos-limpieza-biodigestor",
+      "biodigestor-rebalsa"
+    ]
+  },
+  {
+    "url": "guias/biodigestor-debajo-entrada-autos/",
+    "intencion": "¿Se puede instalar un biodigestor donde pasan autos?",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "ubicacion-pozo-ciego-terreno",
+      "construir-sobre-pozo-ciego",
+      "comprar-biodigestor-antes-instalar"
+    ]
+  },
+  {
+    "url": "guias/comprar-biodigestor-antes-instalar/",
+    "intencion": "Qué revisar antes de comprar un biodigestor",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "precio-instalacion-biodigestor",
+      "capacidad-biodigestor-vivienda",
+      "biodigestor-debajo-entrada-autos"
+    ]
+  },
+  {
+    "url": "guias/puesta-en-marcha-biodigestor/",
+    "intencion": "Biodigestor nuevo: qué revisar en la entrega y puesta en marcha",
+    "grupo": "Biodigestores",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "mantenimiento-biodigestor",
+      "biodigestor-autolimpiable",
+      "como-funciona-biodigestor-domiciliario"
+    ]
+  },
+  {
+    "url": "guias/anular-pozo-ciego/",
+    "intencion": "Cómo encarar la anulación de un pozo ciego en desuso",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "llego-cloaca-que-hacer-pozo",
+      "pozo-antiguo-durante-obra",
+      "construir-sobre-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/localizar-pozo-ciego/",
+    "intencion": "No sé dónde está el pozo ciego: cómo iniciar el relevamiento",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-antiguo-durante-obra",
+      "comprar-casa-pozo-ciego",
+      "ubicacion-pozo-ciego-terreno"
+    ]
+  },
+  {
+    "url": "guias/pozo-antiguo-durante-obra/",
+    "intencion": "Apareció un pozo antiguo durante una obra: qué hacer",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "anular-pozo-ciego",
+      "localizar-pozo-ciego",
+      "construir-sobre-pozo-ciego"
+    ]
+  },
+  {
+    "url": "guias/comprar-casa-pozo-ciego/",
+    "intencion": "Qué revisar al comprar una casa con pozo ciego",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "localizar-pozo-ciego",
+      "reparar-o-hacer-pozo-nuevo",
+      "llego-cloaca-que-hacer-pozo"
+    ]
+  },
+  {
+    "url": "guias/construir-sobre-pozo-ciego/",
+    "intencion": "¿Se puede construir encima de un pozo ciego antiguo?",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "anular-pozo-ciego",
+      "piso-hundido-cerca-pozo",
+      "biodigestor-debajo-entrada-autos"
+    ]
+  },
+  {
+    "url": "guias/raices-canerias-pozo-ciego/",
+    "intencion": "Raíces y cañerías del pozo: qué revisar antes de intervenir",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-o-caneria-tapada",
+      "camara-inspeccion-camara-septica",
+      "reparar-o-hacer-pozo-nuevo"
+    ]
+  },
+  {
+    "url": "guias/agregar-bano-pozo-ciego/",
+    "intencion": "Voy a agregar un baño: ¿alcanza el pozo existente?",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "capacidad-biodigestor-vivienda",
+      "camara-septica-y-pozo-diferencias",
+      "camara-inspeccion-camara-septica"
+    ]
+  },
+  {
+    "url": "guias/casa-fin-semana-sistema-sanitario/",
+    "intencion": "Pozo o biodigestor en una casa de fin de semana: qué cambia",
+    "grupo": "Pozos existentes",
+    "servicio": "biodigestores",
+    "relacionados": [
+      "capacidad-biodigestor-vivienda",
+      "mantenimiento-biodigestor",
+      "casa-sin-cloacas"
+    ]
+  },
+  {
+    "url": "guias/separar-pluviales-pozo-ciego/",
+    "intencion": "Agua de lluvia al pozo ciego: por qué revisar las conexiones",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "pozo-ciego-rebalsa-cuando-llueve",
+      "camara-inspeccion-camara-septica",
+      "casa-sin-cloacas"
+    ]
+  },
+  {
+    "url": "guias/llego-cloaca-que-hacer-pozo/",
+    "intencion": "Llegó la cloaca: qué hacer con el pozo ciego",
+    "grupo": "Pozos existentes",
+    "servicio": "evaluacion-de-pozos",
+    "relacionados": [
+      "anular-pozo-ciego",
+      "casa-sin-cloacas",
+      "camara-inspeccion-camara-septica"
+    ]
+  }
+]
