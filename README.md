@@ -1,6 +1,6 @@
 # WEC Construcciones
 
-Sitio estático de pozos ciegos y biodigestores. Publicación: GitHub Pages desde `main`, carpeta raíz.
+Sitio estático de pozos ciegos y biodigestores, conservando el diseño original. Publicación: GitHub Pages desde `main`, carpeta raíz.
 
 ## Regenerar
 
@@ -16,6 +16,7 @@ No necesita Node, dependencias web, base de datos ni un compilador CSS. Los HTML
 - `content/articles.py`: 50 artículos, cada uno con una intención principal, secciones propias y datos para iniciar una consulta.
 - `content/editorial-map.json`: mapa de URLs e intenciones generado; revisar antes de agregar artículos para evitar solapamientos.
 - `content/gallery.json`: galería compartida por inicio, servicios, artículos y trabajos. Agregar allí nuevas fotos y sus descripciones, poner el archivo optimizado en `assets/` y regenerar. No inventar localidad, fecha, cliente o solución de una obra.
+- `templates/home-original.txt`: portada original anterior a la reformulación. `scripts/restore_home.py` conserva su diseño y adapta únicamente contenido del rubro y acceso a artículos.
 - `assets/site.css` y `assets/site.js`: diseño, filtros, galería ampliable y consultas por WhatsApp.
 - `site_config.json`: teléfono, dominio canónico y etiquetas de medición.
 

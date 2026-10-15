@@ -53,6 +53,11 @@ for f in files:
   if target.is_dir():target=target/'index.html'
   if not target.exists():errors.append(f'{rel}: broken link {link}')
   if u.fragment and target.suffix=='.html' and target.exists() and unquote(u.fragment) not in Doc(target.read_text()).ids:errors.append(f'{rel}: broken target anchor {link}')
+home=(ROOT/'index.html').read_text()
+for marker in ['swiper-container-hero','announcement-bar','id="header"','id="proyectos"','id="como-trabajamos"','id="sobre-nosotros"']:
+ assert marker in home, ('Diseño original ausente',marker)
+assert 'hero-stamp' not in home and 'brand-symbol' not in home
+assert '↗' not in (ROOT/'guias/pozo-ciego-desmoronado/index.html').read_text()
 article_files=list(ROOT.glob('guias/*/index.html'))
 assert len(article_files)==50
 assert len({a['title'] for a in ARTICLES})==50
